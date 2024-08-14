@@ -33,7 +33,7 @@
 		// Page loader & Page transition
 		if (plugins.preloader.length && !isNoviBuilder) {
 			pageTransition({
-				target: document.querySelector( '.page' ),
+				target: document.querySelector('.page'),
 				delay: 0,
 				duration: 500,
 				classIn: 'fadeIn',
@@ -42,10 +42,10 @@
 				conditions: function (event, link) {
 					return !/(\#|callto:|tel:|mailto:|:\/\/)/.test(link) && !event.currentTarget.hasAttribute('data-lightgallery');
 				},
-				onTransitionStart: function ( options ) {
-					setTimeout( function () {
+				onTransitionStart: function (options) {
+					setTimeout(function () {
 						plugins.preloader.removeClass('loaded');
-					}, options.duration * .75 );
+					}, options.duration * .75);
 				},
 				onReady: function () {
 					plugins.preloader.addClass('loaded');
@@ -55,20 +55,20 @@
 		}
 
 		// Paralaxe de materiais
-		if ( plugins.materialParallax.length ) {
-			if ( !isNoviBuilder && !isIE && !isMobile) {
+		if (plugins.materialParallax.length) {
+			if (!isNoviBuilder && !isIE && !isMobile) {
 				plugins.materialParallax.parallax();
 			} else {
-				for ( var i = 0; i < plugins.materialParallax.length; i++ ) {
+				for (var i = 0; i < plugins.materialParallax.length; i++) {
 					var $parallax = $(plugins.materialParallax[i]);
 
-					$parallax.addClass( 'parallax-disabled' );
-					$parallax.css({ "background-image": 'url('+ $parallax.data("parallax-img") +')' });
+					$parallax.addClass('parallax-disabled');
+					$parallax.css({ "background-image": 'url(' + $parallax.data("parallax-img") + ')' });
 				}
 			}
 		}
 	});
-
+	
 	// Inicialize scripts que exigem um documento finalizado
 	$(function () {
 		isNoviBuilder = window.xMode;
@@ -82,9 +82,9 @@
 			regula.custom({
 				name: 'PhoneNumber',
 				defaultMessage: 'Invalid phone number format',
-				validator: function() {
-					if ( this.value === '' ) return true;
-					else return /^(\+\d)?[0-9\-\(\) ]{5,}$/i.test( this.value );
+				validator: function () {
+					if (this.value === '') return true;
+					else return /^(\+\d)?[0-9\-\(\) ]{5,}$/i.test(this.value);
 				}
 			});
 
@@ -101,7 +101,7 @@
 				if (e.type !== "blur") if (!$this.parent().hasClass("has-error")) return;
 				if ($this.parents('.rd-mailform').hasClass('success')) return;
 
-				if (( results = $this.regula('validate') ).length) {
+				if ((results = $this.regula('validate')).length) {
 					for (i = 0; i < results.length; i++) {
 						$this.siblings(".form-validation").text(results[i].message).parent().addClass("has-error");
 					}
@@ -182,9 +182,9 @@
 			plugins.bootstrapTooltip.tooltip('dispose');
 
 			if (window.innerWidth < 576) {
-				plugins.bootstrapTooltip.tooltip({placement: 'bottom'});
+				plugins.bootstrapTooltip.tooltip({ placement: 'bottom' });
 			} else {
-				plugins.bootstrapTooltip.tooltip({placement: tooltipPlacement});
+				plugins.bootstrapTooltip.tooltip({ placement: tooltipPlacement });
 			}
 		}
 
@@ -362,7 +362,7 @@
 								$.ajax({
 									method: "POST",
 									url: "bat/reCaptcha.php",
-									data: {'g-recaptcha-response': captchaToken},
+									data: { 'g-recaptcha-response': captchaToken },
 									async: false
 								})
 									.done(function (responceCode) {
@@ -463,19 +463,21 @@
 		}
 
 		// parallax scroll
-		if($('[data-parallax-scroll]').length && !isNoviBuilder && !isMobile){
+		if ($('[data-parallax-scroll]').length && !isNoviBuilder && !isMobile) {
 			ParallaxScroll.init();
 		}
 
 	});
+	// scrip para o modal de doação
+	const dialog = document.querySelector("#modalDialog");
+	const openButtom = document.querySelector("#openButtom");
+	const closeButtom = document.querySelector("#closeButton");
+
+	openButtom.addEventListener("click", (e) => {
+		dialog.showModal();
+	});
+
+	closeButton.addEventListener("click", (e) => {
+		dialog.close();
+	});
 }());
-
-const model = document.querySelector('.modal-container')
-
-	function openModal() {
-		modal.classList.add('active')
-	}
-
-	function closseModal() {
-		modal.classList.remove('active')
-	}

@@ -6919,3 +6919,12 @@ $container-max-widths: (
 	z-index: 999;
 	justify-content: center;
 );
+
+/* Modal */
+#modalDialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+#modalDialog {
+	border: 2px solid #772cd6;
+}
