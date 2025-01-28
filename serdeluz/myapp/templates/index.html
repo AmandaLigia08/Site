@@ -2,7 +2,10 @@
 
 {% block title %}INICIO{% endblock %} 
 
-{% block content %}
+{% load static %}
 
-    <h1> inicio </h1>
+{% block content %}
+    {% include 'quemsomos.html' %}
+    {% include 'projetoserdeluz.html' %}
+     
 {% endblock %}

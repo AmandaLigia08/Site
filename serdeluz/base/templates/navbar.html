@@ -13,7 +13,7 @@
       <p>Loading...</p>
     </div>
   </div>
-  <div class="page"><a srcset="images/SERDELUZ_CANVA.PNG 1x, images/rodapeserdeluz.png 2x" alt="" width="1600"
+  <div class="page"><a srcset="{% static 'images/SERDELUZ_CANVA.PNG' %} 1x, {% static 'images/rodapeserdeluz.png' %} 2x" alt="" width="1600"
       height="310"></a>
     <!-- Page Header-->
     <header class="section page-header">
@@ -33,21 +33,21 @@
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
                 <div class="rd-navbar-brand"><a href="inicio.html"><img class="brand-logo-serdeluz"
-                      src="images/serdeluz_luz.png" alt="" width="125" height="150" /></a></div>
+                      src="{% static 'images/serdeluz_luz.png' %}" alt="" width="125" height="150" /></a></div>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="inicio.html">Inicio</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="">Inicio</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="sobre.html">Sobre</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Sobre</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="projetos.html">Projetos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Projetos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="galeria.html">Galeria</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Galeria</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="contatos.html">Contatos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Contatos</a>
                     </li>
                   </ul><a class="button button-primary button-sm" href="modal/chave.html">Doar</a>
                 </div>
@@ -61,38 +61,11 @@
     <section class="section section-lg section-main-bunner section-main-bunner-filter ">
       <div class="main-bunner-img" style="background-image: url({% static 'images/serddeluzcapa.jpg'%}); background-size: cover;">
       </div>
-      <div class="bunner-content-modern text-center">
-        <h1 class="main-bunner-title">SER DE LUZ</h1>
+      <div class="bunner-content-modern text-center text-dark">
+        <h1 class="main-bunner-title text-dark">SER DE LUZ</h1>
         <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações
           solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em
           comunidades vulneráveis, tanto no município quanto na zona rural.</p>
       </div>
-    </section>
-    <section class="section section-xl">
-      <div class="container">
-        <div class="row row-50 justify-content-lg-between align-items-lg-center">
-          <div class="col-lg-6">
-            <div class="box-img-animate">
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;: 0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/IMG_SERDELUZ1.png" alt=""></div>
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;: 150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/serdeluz_juntopodemos1.png" alt=""></div>
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;:70, &quot;x&quot;: -250,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/serdeluz_contribuir1.png" alt=""></div>
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;:20, &quot;x&quot;: 20,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/serdeluz_ilumindandovidas1.png" alt=""></div>
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;:60, &quot;x&quot;: 70,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/IMG_SERDELUZ2.png" alt=""></div>
-              <div class="box-img-animate-item"
-                data-parallax-scroll="{&quot;y&quot;:0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img
-                  src="images/IMG_SERDELUZ3.png" alt=""></div>
-            </div>
-          </div>
-        </div>
     </section>
 </body>
