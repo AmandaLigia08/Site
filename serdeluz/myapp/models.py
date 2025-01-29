@@ -13,6 +13,6 @@ class Conselho(models.Model):
         return "{}".format(self.name,)
     
     class Meta:
-        verbose_name = 'Cliente'
-        verbose_name_plural = 'Clientes'
+        verbose_name = 'Conselho'
+        verbose_name_plural = 'Conselhos'
         ordering = ['name']
