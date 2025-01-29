@@ -2,11 +2,14 @@ from django.urls import path
 from myapp import views
 
 urlpatterns = [
-    path('', views.site, name='index'),
-    
+    #paginas
+    path('', views.site, name='index'), 
     path('sobre/', views.sobre, name='sobre'), 
     path('projeto/', views.projeto, name='projeto'),
-    path('contato/', views.contato, name='contato'),  
+    path('contato/', views.contato, name='contato'),
+
+    # Lista de Conselheiros
+    path('list_conselheiro/', views.list_Conselho, name='list-conselheiros'),
 
     #Cadastro
     #path('form-client/', views.form_client, name='client-create'),  
