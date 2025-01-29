@@ -153,6 +153,7 @@
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
+	filter: blur(5px);
 }
 
 .fa-rotate-180 {
@@ -160,6 +161,7 @@
 	-webkit-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
+	filter: blur(5px);
 }
 
 .fa-rotate-270 {
@@ -167,6 +169,7 @@
 	-webkit-transform: rotate(270deg);
 	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
+	filter: blur(5px);
 }
 
 .fa-flip-horizontal {
@@ -174,6 +177,7 @@
 	-webkit-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
+	filter: blur(5px);
 }
 
 .fa-flip-vertical {
@@ -181,6 +185,7 @@
 	-webkit-transform: scale(1, -1);
 	-ms-transform: scale(1, -1);
 	transform: scale(1, -1);
+	filter: blur(5px);
 }
 
 :root .fa-rotate-90,
@@ -8948,7 +8953,6 @@
 [class^="linearicons-"], [class*=" linearicons-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'Linearicons' !important;
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
