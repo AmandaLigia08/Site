@@ -16,6 +16,6 @@ def contato(request):
 
 # Listar conselheiros
 def list_Conselho(request):
-    conselheiros = Conselho.objects.filter(is_ativo=False)
-    context = {'conselheiros ': conselheiros}
+    conselheiros = Conselho.objects.all() #filter(is_ativo=True)
+    context = {'conselheiros': conselheiros}
     return render(request, 'list/list-conselho.html', context)

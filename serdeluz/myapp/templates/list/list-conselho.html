@@ -1,11 +1,35 @@
-
 {% load static %}
 
+{% block content %}
 <section class="section section-lg bg-gray-1">
     <div class="container">
         <h3 class="text-center">Conselho</h3>
+        </br>
         <div class="row no-gutters">
-            <div class="col-md-6 col-lg-4">
+            {% for conselheiro in conselheiros %}
+                <div class="col-md-6 col-lg-4">
+                <div class="team-classic">
+                    <div class="team-classic-figure">
+                        {% if conselheiro.foto %}
+                        <img src="{{ conselheiro.foto.url }}" alt=""
+                            style="width: 200px; height: 200px;" />
+                        {% endif %}
+                        <!--<img src="{% static 'images/geovanny.jpg' %}" alt="" width="390" height="252" />-->
+                        <ul class="team-classic-soc-list">
+                            <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                            <li><a class="icon icon-md fa-instagram" href="{{ conselheiro.instagra }}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="team-classic-caption">
+                        <h4><a class="team-name" href="#">{{ conselheiro.name }}</a></h4>
+                        <p>{{ conselheiro.funcao }}</p>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        
+        <!--<div class="col-md-6 col-lg-4">
                 <div class="team-classic">
                     <div class="team-classic-figure"><img src="{% static 'images/geovanny.jpg' %}" alt="" width="390"
                             height="252" />
@@ -101,6 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
+{% endblock %}
