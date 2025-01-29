@@ -729,8 +729,8 @@ a[href*='tel'], a[href*='mailto'] {
 
 .team-classic-figure .team-classic-soc-list {
 	text-align: center;
-	position: ;
-	top: 50%;
+	position:
+	top 50%;
 	right: 25px;
 	transform: translateY(-70%);
 	transition: all .3s;
@@ -1458,7 +1458,6 @@ img {
 	display: inline-block;
 	font-weight: 400;
 	font-style: normal;
-	speak: none;
 	text-transform: none;
 }
 
@@ -1543,21 +1542,25 @@ img {
 @supports (-webkit-background-clip: text) {
 	.icon-gradient-1 {
 		background: linear-gradient(228.54deg, #772cd6 30.16%, #5656DF 89.45%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.icon-gradient-2 {
 		background: linear-gradient(228.54deg, #FFD541 36.26%, #F73CA1 96.73%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.icon-gradient-3 {
 		background: linear-gradient(228.54deg, #5656DF 0%, #FFD541 100%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.icon-gradient-4 {
 		background: linear-gradient(228.54deg, #00E175 0%, #5656DF 100%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -2279,7 +2282,9 @@ input:-webkit-autofill ~ .form-validation {
 	background-color: #ffffff;
 	background-image: none;
 	border-radius: 5px;
+	appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	transition: .3s ease-in-out;
 	border: 1px solid #fffff0;
 }
@@ -2559,6 +2564,8 @@ textarea.form-input {
 .toggle-custom {
 	padding-left: 60px;
 	-webkit-appearance: none;
+	appearance: none;
+	-moz-appearance: none;
 }
 
 .toggle-custom:checked ~ .checkbox-custom-dummy::after {
@@ -3506,7 +3513,9 @@ ul.blog-post-meta li .icon {
 
 .snackbars-right {
 	display: inline-block;
-	float: right;
+	.element {
+		float: left; /* 'display' será automaticamente tratado como 'block' */
+	}
 	text-transform: uppercase;
 }
 
@@ -3915,21 +3924,25 @@ html.boxed body {
 @supports (-webkit-background-clip: text) {
 	.text-gradient-1 {
 		background: linear-gradient(228.54deg, #772cd6 30.16%, #5656DF 89.45%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.text-gradient-2 {
 		background: linear-gradient(228.54deg, #FFD541 36.26%, #F73CA1 96.73%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.text-gradient-3 {
 		background: linear-gradient(228.54deg, #5656DF 0%, #FFD541 100%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 	.text-gradient-4 {
 		background: linear-gradient(228.54deg, #00E175 0%, #5656DF 100%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -5899,6 +5912,8 @@ html.tablet .ui-to-top {
 	outline-offset: 0;
 	cursor: pointer;
 	-webkit-appearance: none;
+	appearance: none;
+	-moz-appearance: none;
 }
 
 .rd-navbar-search-toggle::-moz-focus-inner {
@@ -6911,11 +6926,11 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 /* config pagina de projetos */
 
-$container-max-widths: (
-	width: 100px;
-	position: fixed;
-	top: 30px;
-	display: none;
-	z-index: 999;
-	justify-content: center;
-);
+.container-max-widths {
+    width: 100px;
+    position: fixed;
+    top: 30px;
+    display: none;
+    z-index: 999;
+    justify-content: center;
+}
