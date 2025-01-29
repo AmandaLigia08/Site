@@ -14,5 +14,5 @@ class Conselho(models.Model):
     
     class Meta:
         verbose_name = 'Conselho'
-        verbose_name_plural = 'Conselhos'
+        verbose_name_plural = 'Conselheiros'
         ordering = ['name']

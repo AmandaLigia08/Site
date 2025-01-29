@@ -1,7 +1,6 @@
 from django.urls import path 
 from myapp import views
-from django.conf import settings
-from django.conf.urls.static import static 
+
 
 urlpatterns = [
     #paginas
@@ -11,7 +10,7 @@ urlpatterns = [
     path('contato/', views.contato, name='contato'),
 
     # Lista de Conselheiros
-    path('list_conselheiro/', views.list_Conselho, name='list-conselheiros'),
+    path('list_conselheiro/', views.list_Conselho, name='conselheiros'),
 
     #Cadastro
     #path('form-client/', views.form_client, name='client-create'),  
@@ -37,6 +36,3 @@ urlpatterns = [
     #path('reports/', views.reports, name='reports'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # Adicionar Isto
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Adicionar Isto
