@@ -2,7 +2,11 @@ from django.urls import path
 from myapp import views
 
 urlpatterns = [
-    path('', views.site, name='list-empreendimentos'), 
+    path('', views.site, name='index'),
+    
+    path('sobre/', views.sobre, name='sobre'), 
+    path('projeto/', views.projeto, name='projeto'),
+    path('contato/', views.contato, name='contato'),  
 
     #Cadastro
     #path('form-client/', views.form_client, name='client-create'),  

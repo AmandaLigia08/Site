@@ -32,22 +32,20 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="inicio.html"><img class="brand-logo-serdeluz"
+                <div class="rd-navbar-brand"><a href="{% url 'index' %}"><img class="brand-logo-serdeluz"
                       src="{% static 'images/serdeluz_luz.png' %}" alt="" width="125" height="150" /></a></div>
               </div>
               <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="">Inicio</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="{% url 'index' %}">Inicio</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Sobre</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'sobre' %}">Sobre</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Projetos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Galeria</a>
-                    </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="">Contatos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'contato' %}">Contatos</a>
                     </li>
                   </ul><a class="button button-primary button-sm" href="modal/chave.html">Doar</a>
                 </div>
