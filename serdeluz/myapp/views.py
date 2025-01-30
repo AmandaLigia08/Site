@@ -26,4 +26,7 @@ def projeto(request):
 def contato(request):
     return render(request, 'contato.html')
 
+def chave(request):
+    return render(request, 'chave.html')
+
 

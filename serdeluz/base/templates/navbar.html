@@ -13,8 +13,8 @@
       <p>Loading...</p>
     </div>
   </div>
-  <div class="page"><a srcset="{% static 'images/SERDELUZ_CANVA.PNG' %} 1x, {% static 'images/rodapeserdeluz.png' %} 2x" alt="" width="1600"
-      height="310"></a>
+  <div class="page"><a srcset="{% static 'images/SERDELUZ_CANVA.PNG' %} 1x, {% static 'images/rodapeserdeluz.png' %} 2x"
+      alt="" width="1600" height="310"></a>
     <!-- Page Header-->
     <header class="section page-header">
       <!-- RD Navbar-->
@@ -47,9 +47,15 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'contato' %}">Contatos</a>
                     </li>
-                  </ul><a class="button button-primary button-sm" href="modal/chave.html">Doar</a>
+                  </ul>
                 </div>
-              </div><a class="button button-primary button-sm" href="modal/chave.html">Doar</a>
+              </div>
+              <div lass="rd-navbar-nav-wrap">
+                <a href="{% url 'chave' %}">
+                <button type="button" class="button button-primary button-sm" data-bs-toggle="modal" data-bs-target="{% url 'chave' %}">
+                  Doar
+                </button></a>
+              </div>
             </div>
           </div>
         </nav>
@@ -57,11 +63,15 @@
     </header>
     <!-- Swiper-->
     <section class="section section-lg section-main-bunner section-main-bunner-filter ">
-      <div class="main-bunner-img" style="background-image: url({% static 'images/serddeluzcapa.jpg'%}); background-size: cover;">
+      <div class="main-bunner-img"
+        style="background-image: url({% static 'images/serddeluzcapa.jpg'%}); background-size: cover;">
       </div>
       <div class="bunner-content-modern text-center text-dark">
         <h1 class="main-bunner-title text-dark">SER DE LUZ</h1>
-        <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.</p>
+        <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações
+          solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em
+          comunidades vulneráveis, tanto no município quanto na zona rural.</p>
       </div>
     </section>
+  </div>
 </body>
