@@ -21,7 +21,7 @@ class Projeto(models.Model):
     titulo = models.CharField(max_length=100)
     subtitulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    fotoprojeto = models.ImageField(upload_to='projeto', verbose_name='Logo',
+    fotoprojeto = models.FileField(upload_to='projeto', verbose_name='fotoprojeto',
         null=True, blank=True)
     is_ativo = models.BooleanField(default=False)
     
