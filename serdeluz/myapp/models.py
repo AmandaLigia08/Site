@@ -5,7 +5,7 @@ class Conselho(models.Model):
     name = models.CharField(max_length=100)
     funcao = models.CharField(max_length=100)
     instagra = models.CharField(max_length=100)
-    foto = models.ImageField(upload_to='conselho', verbose_name='Logo',
+    foto = models.FileField(upload_to='conselho', verbose_name='Foto',
         null=True, blank=True)
     is_ativo = models.BooleanField(default=False)
     
