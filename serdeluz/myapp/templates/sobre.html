@@ -15,7 +15,6 @@
             <div class="col-lg-6">
                 <h3>Sobre Nos</h3>
                 <div class="text-with-divider">
-                    <div class="divider"></div>
                     <h4 class="text-opacity-70">Organização não governamental (ONG)
                         Há 4 anos transformando vidas. ✨
                         <p>+ de 180 voluntários;</p>
@@ -46,14 +45,16 @@
 <section class="section section-lg bg-default">
     <div class="container">
         <h3 class="text-center">Grupos de Luz</h3>
+        </br>
+        </br>
         <div class="row row-30 row-md-40 row-xl-60">
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
                     <div class="box-icon-inner decorate-triangle"><span
-                            class="icon-xl fa fa-cutlery icon-primary"></span>
+                            class="icon-xl fa-cutlery icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Fome</a></h4>
+                        <h4 class="text-decoration-underline">Fome</h4>
                         <p>Uma iniciativa da ONG Ser de Luz dedicada à arrecadação e distribuição de alimentos para
                             famílias em
                             situação de vulnerabilidade. O projeto visa combater a insegurança alimentar, garantindo que
@@ -67,10 +68,10 @@
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
                     <div class="box-icon-inner decorate-triangle"><span
-                            class="icon-xl fa fa-handshake-o icon-primary"></span>
+                            class="icon-xl fa-handshake-o icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">População de Rua</a></h4>
+                        <h4 class="text-decoration-underline">População de Rua</h4>
                         <p class="text-justify">Uma ação da ONG Ser de Luz que oferece assistência integral a pessoas em
                             situação de rua, incluindo distribuição de alimentos, roupas, atendimento médico e apoio
                             psicológico.
@@ -82,10 +83,10 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
-                    <div class="box-icon-inner decorate-rectangle"><span class="icon-xl fa fa-star icon-primary"></span>
+                    <div class="box-icon-inner decorate-rectangle"><span class="icon-xl fa-star icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Cultura</a></h4>
+                        <h4 class="text-decoration-underline">Cultura</h4>
                         <p class="text-justify">Uma iniciativa da ONG Ser de Luz que promove atividades culturais e
                             artísticas
                             nas comunidades, incluindo oficinas, eventos e apresentações. O objetivo é valorizar a
@@ -97,10 +98,10 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
-                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa fa-child icon-primary"></span>
+                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa-child icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Crianças</a></h4>
+                        <h4 class="text-decoration-underline">Crianças</h4>
                         <p class="text-justify">Uma ação da ONG Ser de Luz voltada para o desenvolvimento e bem-estar
                             infantil,
                             oferecendo atividades educativas, recreativas e de apoio social. O objetivo é proporcionar
@@ -111,10 +112,10 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
-                    <div class="box-icon-inner decorate-triangle"><span class="icon-xl fa fa-paw icon-primary"></span>
+                    <div class="box-icon-inner decorate-triangle"><span class="icon-xl fa-paw icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Animais de Rua</a></h4>
+                        <h4 class="text-decoration-underline">Animais de Rua</h4>
                         <p class="text-justify">Uma iniciativa da ONG Ser de Luz que oferece cuidados e proteção para
                             animais em
                             situação de rua, incluindo resgate, alimentação, atendimento veterinário e campanhas de
@@ -125,10 +126,10 @@
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
-                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa fa-user-md icon-primary"></span>
+                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa-user-md icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Saúde</a></h4>
+                        <h4 class="text-decoration-underline">Saúde</h4>
                         <pclass="text-justify">Uma ação da ONG Ser de Luz que oferece serviços de atendimento médico
                             básico,
                             campanhas de vacinação, distribuição de medicamentos e orientação sobre higiene e saúde. O
@@ -141,10 +142,10 @@
             <div class="col-md-4"></div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
-                    <div class="box-icon-inner decorate-rectangle"><span class="icon-xl fa fa-home icon-primary"></span>
+                    <div class="box-icon-inner decorate-rectangle"><span class="icon-xl fa-home icon-primary"></span>
                     </div>
                     <div class="box-icon-caption">
-                        <h4><a href="#">Idosos</a></h4>
+                        <h4 class="text-decoration-underline">Idosos</h4>
                         <p class="text-justify">Uma iniciativa da ONG Ser de Luz dedicada ao cuidado e suporte para a
                             terceira
                             idade, oferecendo atividades sociais, acompanhamento médico, assistência e promoção do
@@ -155,7 +156,33 @@
             </div>
 </section>
 
-{% include 'list/list-conselho.html' %}
+<section class="section section-lg bg-gray-1">
+    <div class="container">
+        <h3 class="text-center">Conselho</h3>
+        </br>
+        <div class="row no-gutters">
+            {% for conselheiro in conselheiros %}
+                <div class="col-md-6 col-lg-4">
+                <div class="team-classic">
+                    <div class="team-classic-figure">
+                        {% if conselheiro.foto %}
+                        <img src="{{ conselheiro.foto.url }}" alt="" style="width: 390px; height: 252px;"/>
+                        {% endif %}
+                        <ul class="team-classic-soc-list">
+                            <li><a class="icon-xl icon-md fa-instagram" href="{{ conselheiro.instagra }}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="team-classic-caption">
+                        <h4 class="team-name text-decoration-underline">{{ conselheiro.name }}</h4>
+                        <p>{{ conselheiro.funcao }}</p>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}

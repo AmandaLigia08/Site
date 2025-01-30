@@ -9,8 +9,7 @@ urlpatterns = [
     path('projeto/', views.projeto, name='projeto'),
     path('contato/', views.contato, name='contato'),
 
-    # Lista de Conselheiros
-    path('list_conselheiro/', views.list_Conselho, name='conselheiros'),
+    
 
     #Cadastro
     #path('form-client/', views.form_client, name='client-create'),  

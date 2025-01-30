@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Conselho
+from .models import Conselho, Projeto
 
 # Listar conselheiros
 def list_Conselho(request):
@@ -9,19 +9,21 @@ def list_Conselho(request):
 
 # Create your views here.
 def site(request):
-    return render(request, 'index.html')
+    projetos = Projeto.objects.filter(is_ativo=False)
+    context = {'projetos': projetos}
+    return render(request, 'index.html', context)
 
 def sobre(request):
-    return render(request, 'sobre.html')
+    conselheiros = Conselho.objects.filter(is_ativo=False)
+    context = {'conselheiros': conselheiros}
+    return render(request, 'sobre.html', context)
 
 def projeto(request):
-    return render(request, 'projeto.html')
+    projetos = Projeto.objects.filter(is_ativo=False)
+    context = {'projetos': projetos}
+    return render(request, 'projeto.html', context)
 
 def contato(request):
     return render(request, 'contato.html')
 
-# Listar conselheiros
-def list_Conselho(request):
-    conselheiros = Conselho.objects.all() #filter(is_ativo=True)
-    context = {'conselheiros': conselheiros}
-    return render(request, 'list/list-conselho.html', context)
+
