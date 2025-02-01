@@ -14,7 +14,27 @@
           <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="" width="518" height="430" />
         </div>
         <div class="col-lg-6">
-          <h3>Cuzcuz Solidário</h3>
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Exemplo de Gradiente no Texto</title>
+            <style>
+                /* CSS que você forneceu */
+                .texto-destaque {
+                    font-size: 48px;
+                    font-weight: bold;
+                    background: linear-gradient(45deg, #ff6f61, #6fa3ff); /* Gradiente de cores */
+                    background-clip: text; /* Aplica o gradiente ao texto */
+                    color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
+                    text-align: center;
+                    text-transform: uppercase;     /* Deixa o texto em maiúsculas */
+                }
+            </style>
+        </head>
+        <body>
+            <h3 class="texto-destaque">Cuscuz Solidário</h3>
+        </body>
+        </html>
           <div class="text-with-divider">
             <h4 class="text-opacity-70">O projeto a Cara da ONG: oferece, todas as quintas-feiras, uma refeição nutritiva e calorosa para pessoas em situação de rua.</h4>
           </div>
