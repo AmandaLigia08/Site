@@ -43,14 +43,14 @@
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'sobre' %}">Sobre</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a>
+                    <li class="rd-nav-item "><a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'contato' %}">Contatos</a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div lass="rd-navbar-nav-wrap">
+              <div lass="rd-navbar-nav-wrap active">
                 <a href="{% url 'chave' %}">
                 <button type="button" class="button button-primary button-sm" data-bs-toggle="modal" data-bs-target="{% url 'chave' %}">
                   Doar
@@ -61,14 +61,76 @@
         </nav>
       </div>
     </header>
-    <!-- Swiper-->
-    <section class="section section-lg section-main-bunner section-main-bunner-filter ">
-      <div class="main-bunner-img"
-      style="background-image: url({% static 'images/serddeluzcapa.jpg' %});background-size: cover;"></div>
-      <div class="bunner-content-modern text-center">
-        <h1 class="main-bunner-title">SER DE LUZ</h1>
-        <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas emcomunidades vulneráveis, tanto no município quanto na zona rural.</p>
-      </div>
-    </section>
-  </div>
-</body>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capa - SER DE LUZ</title>
+        <style>
+            /* Estilo para o banner */
+    .main-bunner-title {
+        font-size: 80px; /* Aumenta o tamanho do texto */
+        font-weight: bold; /* Aplica negrito */
+        color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+        background: linear-gradient(45deg, #ff6f61, #6fa3ff); /* Gradiente de cores */
+        -webkit-background-clip: text; /* Aplica o gradiente ao texto */
+        background-clip: text; /* Aplica o gradiente ao texto para outros navegadores */
+        text-align: center; /* Alinha o texto ao centro */
+        text-transform: uppercase; /* Transforma o texto para maiúsculas */
+        letter-spacing: 5px; /* Aumenta o espaço entre as letras */
+        line-height: 1.2; /* Ajusta o espaço entre as linhas */
+        position: relative; /* Necessário para animações ou outros efeitos */
+        z-index: 1; /* Garante que o título ficará na frente */
+        margin: 0; /* Remove margens padrão */
+    }
+    
+    /* Estilo para o fundo da capa */
+    .main-bunner {
+        background-image: url({% static 'images/serddeluzcapa.jpg'%}); /* Substitua pelo caminho da sua imagem */
+        background-size: cover; /* Faz a imagem cobrir toda a área */
+        background-position: center; /* Centraliza a imagem */
+        height: 100vh; /* Define a altura da capa como 100% da altura da tela */
+        display: flex; /* Usado para centralizar o conteúdo */
+        justify-content: center; /* Centraliza o conteúdo horizontalmente */
+        align-items: center; /* Centraliza o conteúdo verticalmente */
+        position: relative; /* Permite que o título fique sobre o fundo */
+    }
+    
+    /* Adiciona sombra e animação para o título */
+    .main-bunner-title::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(233, 0, 241, 0.5); /* Sombra escura para aumentar o contraste */
+        z-index: -1; /* Coloca a sombra atrás do título */
+        border-radius: 10px; /* Adiciona borda arredondada à sombra */
+    }
+    
+    /* Efeito de animação para o título */
+    .main-bunner-title {
+        animation: fadeInUp 2s ease-out; /* Animação do título aparecendo */
+    }
+    
+    /* Definindo a animação */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px); /* Título começa abaixo */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0); /* Título vai para o lugar normal */
+        }
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div class="main-bunner">
+            <h1 class="main-bunner-title">SER DE LUZ</h1>
+      </p>
+        </div>
+    </body>
+    </html>
