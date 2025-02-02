@@ -5,7 +5,11 @@
 {% load static %}
 
 {% block content %}
+
+
+
   <style>
+
     /* Estilos Globais */
     .texto-destaque {
         font-size: 42px;
@@ -53,6 +57,7 @@
     }
   </style>
   
+  <!-- Seção do Cuscuz Solidário -->
   <section class="section section-lg bg-gray-1 bg-gray-1-decor">
     <div class="container">
         <h3 class="texto-destaque">Cuscuz Solidário</h3>
@@ -83,6 +88,7 @@
     </div>
   </section>
   
+  <!-- Seção de Projetos -->
   <section class="section section-lg">
     <div class="container">
       <div class="row row-50">
@@ -96,14 +102,23 @@
             <div class="col-lg-6">
               <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
               <p class="text-justify">{{ projeto.descricao }}</p>
-              <a href="https://www.instagram.com/serdeluzpb/" class="btn btn-primary" target="_blank">Saiba mais</a>
+              <a href="#detalhes-{{ projeto.id }}" class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="detalhes-{{ projeto.id }}">Saiba mais</a>
+            </div>
+          </div>
+          
+          <!-- Detalhes do Projeto - Colapsa quando o botão é clicado -->
+          <div class="collapse" id="detalhes-{{ projeto.id }}">
+            <div class="row">
+              <div class="col-lg-12">
+                <h5 class="text-center">Detalhes do Projeto</h5>
+                <p class="text">{{ projeto.descricao }}</p>
+              </div>
             </div>
           </div>
         {% endfor %}
       </div>
     </div>
   </section>
-
   <style>
     .row {
       transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -125,4 +140,5 @@
       background-color: #0056b3;
     }
   </style>
+
 {% endblock %}
