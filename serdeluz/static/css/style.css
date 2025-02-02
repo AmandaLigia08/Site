@@ -1,0 +1,116 @@
+/* Estilo para o banner */
+.main-bunner {
+    background-image: url('/static/images/serddeluzcapa.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.main-bunner-title {
+    font-size: 80px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #772cd6, #ffd42b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.main-bunner p {
+    max-width: 800px;
+    font-size: 20px;
+    line-height: 1.6;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Animação */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilização da Navbar */
+.rd-navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.rd-nav-item {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Links da navegação */
+.rd-nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover nos itens */
+.rd-nav-item:hover {
+    background-color: rgba(255, 204, 0, 0.2);
+}
+
+/* Destaque da página ativa */
+.rd-nav-item.active {
+    background-color: #ffd42b;
+    color: white;
+    border-radius: 8px;
+}
+
+.rd-nav-item.active .rd-nav-link {
+    color: white;
+}
+
+/* Estilização do botão "Doar" */
+.btn-doar {
+    background: linear-gradient(45deg, #ffd42b, #772cd6);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    cursor: pointer;
+}
+
+.btn-doar:hover {
+    background: linear-gradient(45deg, #ffd42b, #772cd6);
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rd-navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .btn-doar {
+        width: 100%;
+    }
+}
