@@ -37,15 +37,6 @@
         padding: 10px;
     }
 
-    .container img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 8px;
-        display: block;
-        margin: auto;
-    }
-
     /* Responsividade */
     @media (max-width: 768px) {
         .texto-destaque {
@@ -90,7 +81,8 @@
             </div>
         </div>
     </div>
-</section>
+  </section>
+  
   <section class="section section-lg">
     <div class="container">
       <div class="row row-50">
@@ -104,7 +96,7 @@
             <div class="col-lg-6">
               <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
               <p class="text-justify">{{ projeto.descricao }}</p>
-              <a href="#" class="btn btn-primary">Saiba mais</a>
+              <a href="https://www.instagram.com/serdeluzpb/" class="btn btn-primary" target="_blank">Saiba mais</a>
             </div>
           </div>
         {% endfor %}
