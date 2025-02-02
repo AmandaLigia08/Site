@@ -6,70 +6,184 @@
 
 {% block content %}
 
+<style>
+    /* Estilos Globais */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
 
-<section class="section section-lg text-center bg-default">
+    .section {
+        padding: 60px 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Caixa de Contato */
+    .box-icon-classic {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    .box-icon-classic:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .box-icon-classic .icon-xl {
+        font-size: 50px;
+        color: #772cd6;
+        margin-bottom: 15px;
+    }
+
+    .box-icon-classic h4 a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .box-icon-classic h4 a:hover {
+        color: #772cd6;
+    }
+
+    /* Formulário de Contato */
+    .rd-form {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .form-wrap {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-input:focus {
+        border-color: #772cd6;
+        box-shadow: 0 0 5px rgba(119, 44, 214, 0.3);
+        outline: none;
+    }
+
+    .form-label {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        font-size: 14px;
+        color: #777;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-input:focus + .form-label,
+    .form-input:not(:placeholder-shown) + .form-label {
+        top: -15px;
+        left: 10px;
+        font-size: 12px;
+        color: #772cd6;
+    }
+
+    textarea.form-input {
+        resize: none;
+        height: 120px;
+    }
+
+    /* Botão */
+    .button-primary {
+        background: #772cd6;
+        color: #fff;
+        padding: 12px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .button-primary:hover {
+        background: #5a1aa8;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .section {
+            padding: 40px 20px;
+        }
+
+        .box-icon-classic {
+            margin: 10px;
+            padding: 20px;
+        }
+    }
+</style>
+
+<section class="section text-center bg-default">
     <div class="container">
-        <div class="row row-50">
-            <div class="col-md-6 col-lg-6">
+        <div class="row row-50 justify-content-center">
+            <div class="col-md-6">
                 <div class="box-icon-classic">
-                    <div class="decorate-circle decorate-color-secondary-2"><span
-                            class="icon-xl fa-map icon-gradient-2"></span></div>
+                    <span class="icon-xl fa-map icon-gradient-2"></span>
                     <div class="box-icon-caption">
                         <h4><a href="https://linktr.ee/serdeluzpb">Ser de Luz</a></h4>
                         <p>Canal de Informações</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-6">
                 <div class="box-icon-classic">
-                    <div class="decorate-rectangle decorate-color-primary"><span
-                            class="icon-xl fa-paper-plane icon-gradient-3"></span></div>
+                    <span class="icon-xl fa-paper-plane icon-gradient-3"></span>
                     <div class="box-icon-caption">
                         <h4><a href="mailto:serdeluzpatos@gmail.com">E-mail</a></h4>
-                        <p>Sinta-se à vontade para nos enviar suas dúvidas por e-mail</p>
+                        <p>Nos envie suas dúvidas por e-mail</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Contact us-->
-<section class="section section-lg bg-gray-1 text-center">
+
+<!-- Contato -->
+<section class="section bg-gray-1 text-center">
     <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-9 col-lg-7">
-                <h3>Entrar em Contato</h3>
-                <!-- RD Mailform-->
-                <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                    method="post" action="bat/rd-mailform.php">
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-name" type="text" name="name"
-                            data-constraints="@Required">
-                        <label class="form-label" for="contact-name">Seu Nome</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-email" type="email" name="email"
-                            data-constraints="@Email @Required">
-                        <label class="form-label" for="contact-email">E-mail</label>
-                    </div>
-                    <div class="form-wrap">
-                        <input class="form-input" id="contact-phone" type="text" name="phone"
-                            data-constraints="@Numeric">
-                        <label class="form-label" for="contact-phone">Telefone</label>
-                    </div>
-                    <div class="form-wrap">
-                        <label class="form-label" for="contact-message"> Messagem </label>
-                        <textarea class="form-input" id="contact-message" name="message"
-                            data-constraints="@Required"></textarea>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-7 col-lg-5">
-                            <button class="button button-block button-lg button-primary" type="submit">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+        <h3>Entrar em Contato</h3>
+        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+            <div class="form-wrap">
+                <input class="form-input" id="contact-name" type="text" name="name" placeholder=" " required>
+                <label class="form-label" for="contact-name">Seu Nome</label>
             </div>
-        </div>
+            <div class="form-wrap">
+                <input class="form-input" id="contact-email" type="email" name="email" placeholder=" " required>
+                <label class="form-label" for="contact-email">E-mail</label>
+            </div>
+            <div class="form-wrap">
+                <input class="form-input" id="contact-phone" type="text" name="phone" placeholder=" ">
+                <label class="form-label" for="contact-phone">Telefone</label>
+            </div>
+            <div class="form-wrap">
+                <textarea class="form-input" id="contact-message" name="message" placeholder=" " required></textarea>
+                <label class="form-label" for="contact-message">Mensagem</label>
+            </div>
+            <button class="button button-primary" type="submit">Enviar</button>
+        </form>
     </div>
 </section>
 
