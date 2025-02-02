@@ -1,26 +1,66 @@
-<div class="modal fade" id="modalExemplo" tabindex="-1" aria-labelledby="modalExemploLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-          <!-- Cabeçalho do Modal -->
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="modalExemploLabel">Título do Modal</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-          </div>
+{% load static %}
 
-          <!-- Corpo do Modal -->
-          <div class="modal-body">
-              <p>Adicione aqui o conteúdo do modal.</p>
-          </div>
+<section class="section section-xl">
+    <div class="container">
+        <div class="row row-50 justify-content-lg-between align-items-lg-center">
+            <div class="col-lg-6 text-center">
+                <h2 class="texto-destaque">Doe e Ajude Famílias</h2>
+                <p class="texto-destaque">Sua doação faz a diferença! Contribua via PIX e ajude famílias em situação de vulnerabilidade.</p>
+                <div class="pix-container">
+                    <img src="{% static 'images/qr code.jpeg' %}" alt="QR Code PIX" class="qr-code">
+                    <p class="pix-key">Chave PIX: <span id="pixKey">50064447000100</span></p>
+                    <button class="btn btn-primary" onclick="copiarPix()">Copiar Chave PIX</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box-img-animate">
+                    {% for imagem in imagens %}
+                    <div class="box-img-animate-item" data-parallax-scroll="{{ imagem.parallax }}">
+                        <img src="{% static imagem.src %}" alt="{{ imagem.alt }}" loading="lazy">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-          <!-- Rodapé do Modal -->
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                  Fechar
-              </button>
-              <button type="button" class="btn btn-primary">
-                  Salvar Alterações
-              </button>
-          </div>
-      </div>
-  </div>
-</div>
+<style>
+    .texto-destaque {
+        font-size: 48px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #772cd6, #ffd42b);
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .pix-container {
+        text-align: center;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px ffd42b(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    .qr-code {
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    .pix-key {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffd42b;
+    }
+</style>
+
+<script>
+    function copiarPix() {
+        var chavePix = document.getElementById("pixKey").innerText;
+        navigator.clipboard.writeText(chavePix).then(function() {
+            alert("Chave PIX copiada com sucesso!");
+        }).catch(function(error) {
+            console.error("Erro ao copiar chave PIX", error);
+        });
+    }
+</script>
