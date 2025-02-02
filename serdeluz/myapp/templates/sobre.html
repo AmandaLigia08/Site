@@ -216,7 +216,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-inline-flex justify-content-start align-items-stretch"></div>
+
             <div class="col-md-4"></div>
             <div class="col-md-6 col-lg-4">
                 <div class="box-icon-modern">
@@ -249,13 +249,12 @@
                 }
             </style>
         </head>
-        <section class="section section-lg bg-gray-1">
-            <div class="container">
+
                 <h3 class="texto-destaque">Conselho</h3>
                 <br>
                 <div class="row no-gutters">
                     {% for conselheiro in conselheiros %}
-                        <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                             <div class="team-classic">
                                 <div class="team-classic-figure">
                                     {% if conselheiro.foto %}
@@ -294,8 +293,7 @@
                 overflow: hidden;
                 transition: transform 0.3s ease-in-out;
                 text-align: center;
-                padding: 20px;
-                margin: 15px;
+
             }
             .team-classic:hover {
                 transform: translateY(-5px);
