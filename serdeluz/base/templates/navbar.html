@@ -109,29 +109,107 @@
                             
                             <!-- Navbar Links -->
                             <div class="rd-navbar-main-element">
-                                <div class="rd-navbar-nav-wrap">
-                                    <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="{% url 'index' %}">Início</a></li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'sobre' %}">Sobre</a></li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a></li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'contato' %}">Contato</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                              <div class="rd-navbar-nav-wrap">
+                                  <ul class="rd-navbar-nav">
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                                          <a class="rd-nav-link" href="{% url 'index' %}">Início</a>
+                                      </li>
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'sobre' %}active{% endif %}">
+                                          <a class="rd-nav-link" href="{% url 'sobre' %}">Sobre</a>
+                                      </li>
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'projeto' %}active{% endif %}">
+                                          <a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a>
+                                      </li>
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'contato' %}active{% endif %}">
+                                          <a class="rd-nav-link" href="{% url 'contato' %}">Contato</a>
+                                      </li>
 
-                            <!-- Botão Doar -->
+                                      
+                                  </ul>
+                              </div>
+                          </div>
+                           <!-- Botão Doar -->
                             <div class="rd-navbar-nav-wrap active">
                                 <a href="{% url 'chave' %}">
                                     <button type="button" class="btn-doar">Doar</button>
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </nav>
             </div>
         </header>
-
+        <style>
+      
+          .rd-navbar-nav {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              gap: 20px;
+          }
+      
+          .rd-nav-item {
+              padding: 10px 15px;
+              border-radius: 8px;
+              transition: all 0.3s ease-in-out;
+          }
+      
+          /* Links da navegação */
+          .rd-nav-link {
+              text-decoration: none;
+              color: #333;
+              font-weight: bold;
+              font-size: 18px;
+              transition: color 0.3s ease-in-out;
+          }
+      
+          /* Hover nos itens */
+          .rd-nav-item:hover {
+              background-color: rgba(255, 204, 0, 0.2);
+          }
+      
+          /* 🔥 Destaque da página ativa */
+          .rd-nav-item.active {
+              background-color: #ffd42b;
+              color: white;
+              border-radius: 8px;
+          }
+      
+          .rd-nav-item.active .rd-nav-link {
+              color: white;
+          }
+      
+          /* Estilização do botão "Doar" */
+          .btn-doar {
+              background: linear-gradient(45deg, #ffd42b, #772cd6);
+              border: none;
+              color: white;
+              font-size: 18px;
+              font-weight: bold;
+              padding: 10px 20px;
+              border-radius: 8px;
+              transition: transform 0.3s ease-in-out, background 0.3s;
+              cursor: pointer;
+          }
+      
+          .btn-doar:hover {
+              background: linear-gradient(45deg, #ffd42b, #772cd6);
+              transform: scale(1.05);
+          }
+      
+          /* Responsividade */
+          @media (max-width: 768px) {
+              .rd-navbar-nav {
+                  flex-direction: column;
+                  text-align: center;
+              }
+              
+              .btn-doar {
+                  width: 100%;
+              }
+          }
+      </style>
         <!-- Seção Principal -->
         <div class="main-bunner">
             <h1 class="main-bunner-title">SER DE LUZ</h1>
@@ -139,8 +217,6 @@
                 Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.
             </p>
         </div>
-
     </div>
-
 </body>
 </html>
