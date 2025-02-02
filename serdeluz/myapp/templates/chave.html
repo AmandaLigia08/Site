@@ -132,16 +132,143 @@
     .imagem-destaque:hover {
         transform: scale(1.05);
     }
+    .mensagem-agradecimento {
+        display: none;
+        font-size: 18px;
+        color: #FFD700;
+        margin-top: 10px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+     /* Estilos do Modal */
+     .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .fechar {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    /* Animação do Modal */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
 
 </style>
-
 <script>
     function copiarPix() {
         var chavePix = document.getElementById("pixKey").innerText;
         navigator.clipboard.writeText(chavePix).then(function() {
-            alert("✅ Chave PIX copiada com sucesso!");
+            abrirModal(); // Exibe o modal de agradecimento
+            setTimeout(fecharModal, 5000); // Fecha o modal após 5 segundos
         }).catch(function(error) {
             console.error("Erro ao copiar chave PIX", error);
         });
     }
+
+    function abrirModal() {
+        document.getElementById("modalAgradecimento").style.display = "flex";
+    }
+
+    function fecharModal() {
+        document.getElementById("modalAgradecimento").style.display = "none";
+    }
 </script>
+<!-- Modal de Agradecimento -->
+<div id="modalAgradecimento" class="modal">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <h2>💜 Muito Obrigado pela sua doação!</h2>
+        <p>Sua generosidade ajuda muitas famílias. </p>
+        <p>Que a luz e a gratidão retornem em dobro para você! ✨</p>
+    </div>
+</div>
+
+<style>
+    /* Estilização do Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .modal-content {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        width: 90%;
+        max-width: 420px;
+        box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.5s ease-in-out;
+        position: relative;
+    }
+
+    .modal-content h2 {
+        color: #4A00E0;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .modal-content p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .fechar {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #555;
+        transition: color 0.3s ease;
+    }
+
+    .fechar:hover {
+        color: #E74C3C;
+    }
+
+    /* Animação do Modal */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
