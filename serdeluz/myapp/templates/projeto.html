@@ -1,78 +1,63 @@
 {% extends 'base.html' %}
 
-{% block title %}
-  Projetos
-{% endblock %}
+{% block title %}Projetos{% endblock %}
 
 {% load static %}
 
 {% block content %}
+  <style>
+    .texto-destaque {
+      font-size: 48px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #772cd6, #ffd42b);
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+
   <section class="section section-lg bg-gray-1 bg-gray-1-decor">
     <div class="container">
       <div class="row row-50">
         <div class="col-lg-6 pr-xl-5">
-          <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="" width="518" height="430" />
+          <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="" width="518" height="430" class="img-fluid" />
         </div>
         <div class="col-lg-6">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Exemplo de Gradiente no Texto</title>
-            <style>
-                /* CSS que você forneceu */
-                .texto-destaque {
-                    font-size: 48px;
-                    font-weight: bold;
-                    background: linear-gradient(45deg, #772cd6, #ffd42b); /* Gradiente de cores */
-                    background-clip: text; /* Aplica o gradiente ao texto */
-                    color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
-                    text-align: center;
-                    text-transform: uppercase;     /* Deixa o texto em maiúsculas */
-                }
-            </style>
-        </head>
-        <body>
-            <h3 class="texto-destaque">Cuscuz Solidário</h3>
-        </body>
-        </html>
+          <h3 class="texto-destaque">Cuscuz Solidário</h3>
           <div class="text-with-divider">
-            <h4 class="text-opacity-70">O projeto a Cara da ONG: oferece, todas as quintas-feiras, uma refeição nutritiva e calorosa para pessoas em situação de rua.</h4>
+            <h4 class="text-opacity-70">
+              O projeto a Cara da ONG: oferece, todas as quintas-feiras, uma refeição nutritiva e calorosa para pessoas em situação de rua.
+            </h4>
           </div>
-          <p class="text-justify">Uma ação solidária que acontece todas as quintas-feiras, na quinta do mercado público de Patos-PB. Dedicado a fornecer uma refeição nutritiva e reconfortante para pessoas em situação de rua. Nosso objetivo é oferecer mais do que apenas alimento; queremos proporcionar um momento de acolhimento e dignidade, mostrando que essas pessoas não estão sozinhas e que há quem se importe com elas.</p>
-          <p class="text-justify">Nossos voluntários se reúnem semanalmente para preparar o cuscuz, um prato tradicional e altamente nutritivo, que é distribuído com carinho e respeito. A escolha do cuscuz não é apenas pela sua simplicidade e valor nutricional, mas também pelo simbolismo de partilha e cuidado. Cada refeição é uma oportunidade de criar conexões humanas, ouvir histórias e oferecer um sorriso, fortalecendo os laços de solidariedade na comunidade.</p>
-          <p class="text-justify">Ao longo do tempo, "O Cuscuz Solitário" tem se tornado um ponto de referência e esperança para muitas pessoas em situação de vulnerabilidade. Nosso compromisso é continuar expandindo essa rede de apoio, buscando parcerias e recursos para alcançar um número cada vez maior de necessitados. Acreditamos que, através de pequenas ações como esta, podemos contribuir para a construção de uma sociedade mais justa e humana.</p>
+          <p class="text-justify">
+            Uma ação solidária que acontece todas as quintas-feiras, na quinta do mercado público de Patos-PB. Dedicado a fornecer uma refeição nutritiva e reconfortante para pessoas em situação de rua. Nosso objetivo é oferecer mais do que apenas alimento; queremos proporcionar um momento de acolhimento e dignidade, mostrando que essas pessoas não estão sozinhas e que há quem se importe com elas.
+          </p>
+          <p class="text-justify">
+            Nossos voluntários se reúnem semanalmente para preparar o cuscuz, um prato tradicional e altamente nutritivo, que é distribuído com carinho e respeito. A escolha do cuscuz não é apenas pela sua simplicidade e valor nutricional, mas também pelo simbolismo de partilha e cuidado.
+          </p>
+          <p class="text-justify">
+            Ao longo do tempo, "O Cuscuz Solidário" tem se tornado um ponto de referência e esperança para muitas pessoas em situação de vulnerabilidade. Nosso compromisso é continuar expandindo essa rede de apoio, buscando parcerias e recursos para alcançar um número cada vez maior de necessitados.
+          </p>
         </div>
       </div>
     </div>
   </section>
+
   <section class="section section-lg bg-default">
     <div class="container">
       <div class="row row-50">
         {% for projeto in projetos %}
-          <div class="col-lg-6 pr-xl-5">
+          <div class="col-lg-6 pr-xl-5 mb-4">
             {% if projeto.fotoprojeto %}
-              <img src="{{ projeto.fotoprojeto.url }}" alt="" style="width: 390px; height: 252px;" />
+              <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="img-fluid rounded shadow-sm" />
             {% endif %}
           </div>
-          <div class="text-with-divider">
-            <div class="row row-30 row-md-40 row-xl-60">
-              <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
-            </div>
+          <div class="col-lg-6">
+            <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
             <p class="text-justify">{{ projeto.descricao }}</p>
+            <a href="#" class="btn btn-primary">Saiba mais</a>
           </div>
-        
-        <div class="row g-0 bg-body-secondary position-relative">
-          <div class="col-md-6 mb-md-0 p-md-4">
-            {% if projeto.fotoprojeto %}
-              <img src="{{ projeto.fotoprojeto.url }}" alt="" style="width: 390px; height: 252px;" />
-            {% endif %}
-          </div>
-          <div class="col-md-6 p-4 ps-md-0">
-            <h5 class="mt-0">{{ projeto.titulo }}</h5>
-            <p>{{ projeto.descricao }}</p>
-            <a href="#" class="stretched-link">Link do projeto</a>
-          </div>
-        </div>
         {% endfor %}
       </div>
     </div>
