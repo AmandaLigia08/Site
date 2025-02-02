@@ -1,23 +1,22 @@
 {% load static %}
 
-
 <section class="section section-xl">
     <div class="container">
         <div class="row row-50 justify-content-lg-between align-items-lg-center">
             <div class="col-lg-6 text-center">
                 <h2 class="texto-destaque">Doe e Ajude Famílias</h2>
-                <p class="texto-destaque">Sua doação faz a diferença! Contribua via PIX e ajude famílias em situação de vulnerabilidade.</p>
+                <p class="subtexto-destaque">Sua doação faz a diferença! Contribua via PIX e ajude famílias em situação de vulnerabilidade.</p>
                 <div class="pix-container">
                     <img src="{% static 'images/qr code.jpeg' %}" alt="QR Code PIX" class="qr-code">
                     <p class="pix-key">Chave PIX: <span id="pixKey">50064447000100</span></p>
-                    <button class="btn btn-primary" onclick="copiarPix()">Copiar Chave PIX</button>
+                    <button class="btn-doar" onclick="copiarPix()">💜 Copiar Chave PIX</button>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="box-img-animate">
                     {% for imagem in imagens %}
                     <div class="box-img-animate-item" data-parallax-scroll="{{ imagem.parallax }}">
-                        <img src="{% static imagem.src %}" alt="{{ imagem.alt }}" loading="lazy">
+                        <img src="{% static imagem.src %}" alt="{{ imagem.alt }}" class="imagem-destaque" loading="lazy">
                     </div>
                     {% endfor %}
                 </div>
@@ -27,40 +26,120 @@
 </section>
 
 <style>
+    /* Fundo Animado para um Visual Moderno */
+    body {
+        background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+        background-size: 300% 300%;
+        font-family: 'Poppins', sans-serif;
+        animation: gradientBG 8s ease infinite alternate;
+        color: #fff;
+    }
+    @keyframes gradientBG {
+        0% { background-position: left; }
+        100% { background-position: right; }
+    }
+
     .texto-destaque {
-        font-size: 48px;
+        font-size: 50px;
         font-weight: bold;
-        background: linear-gradient(45deg, #772cd6, #ffd42b);
+        text-transform: uppercase;
+        background: linear-gradient(45deg, #FFD700, #FFA500);
         background-clip: text;
         color: transparent;
         text-align: center;
-        text-transform: uppercase;
+        animation: glow 1.5s infinite alternate;
     }
+    @keyframes glow {
+        from { text-shadow: 0 0 15px #FFD700; }
+        to { text-shadow: 0 0 25px #FFA500; }
+    }
+
+    .subtexto-destaque {
+        font-size: 22px;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Estilização da Caixa de PIX */
     .pix-container {
         text-align: center;
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px ffd42b(0,0,0,0.1);
+        background: rgba(255, 255, 255, 0.15);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
         margin-top: 20px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease-in-out;
     }
+    .pix-container:hover {
+        transform: scale(1.05);
+    }
+
     .qr-code {
-        max-width: 200px;
-        margin-bottom: 10px;
+        max-width: 280px;
+        margin-bottom: 15px;
+        border: 5px solid #FFD700;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        transition: transform 0.3s ease-in-out;
     }
+    .qr-code:hover {
+        transform: scale(1.1);
+    }
+
     .pix-key {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: bold;
-        color: #ffd42b;
+        color: #FFD700;
+        background: rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 5px;
+        animation: pulse 1.5s infinite;
     }
-    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    .btn-doar {
+        background: linear-gradient(90deg, #FFD700, #FFA500);
+        color: #4A00E0;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        padding: 14px 22px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+    .btn-doar:hover {
+        background: linear-gradient(90deg, #FFA500, #FF4500);
+        transform: scale(1.05);
+    }
+
+    .imagem-destaque {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+    .imagem-destaque:hover {
+        transform: scale(1.05);
+    }
+
 </style>
 
 <script>
     function copiarPix() {
         var chavePix = document.getElementById("pixKey").innerText;
         navigator.clipboard.writeText(chavePix).then(function() {
-            alert("Chave PIX copiada com sucesso!");
+            alert("✅ Chave PIX copiada com sucesso!");
         }).catch(function(error) {
             console.error("Erro ao copiar chave PIX", error);
         });
