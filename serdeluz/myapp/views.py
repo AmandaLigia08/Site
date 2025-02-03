@@ -9,7 +9,7 @@ def list_Conselho(request):
 
 # Create your views here.
 def site(request):
-    projetos = Projeto.objects.filter(is_ativo=False)
+    projetos = Projeto.objects.filter(is_principal=True)
     context = {'projetos': projetos}
     return render(request, 'index.html', context)
 
@@ -18,8 +18,8 @@ def sobre(request):
     context = {'conselheiros': conselheiros}
     return render(request, 'sobre.html', context)
 
-def projeto(request):
-    projetos = Projeto.objects.filter(is_ativo=False)
+def projeto(request, id):
+    projetos = Projeto.objects.filter(id=id)
     context = {'projetos': projetos}
     return render(request, 'projeto.html', context)
 

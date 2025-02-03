@@ -23,6 +23,7 @@ class Projeto(models.Model):
     descricao = models.TextField()
     fotoprojeto = models.FileField(upload_to='projeto', verbose_name='fotoprojeto',
         null=True, blank=True)
+    is_principal = models.BooleanField(default=False)
     is_ativo = models.BooleanField(default=False)
     
     def __str__(self):

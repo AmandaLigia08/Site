@@ -6,7 +6,7 @@ urlpatterns = [
     #paginas
     path('', views.site, name='index'), 
     path('sobre/', views.sobre, name='sobre'), 
-    path('projeto/', views.projeto, name='projeto'),
+    path('projeto/<int:id>/', views.projeto, name='projeto'),
     path('contato/', views.contato, name='contato'),
     path('chave/', views.chave, name='chave'),
 

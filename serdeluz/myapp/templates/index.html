@@ -51,9 +51,10 @@
                     <img src="{% static 'images/default.jpg' %}" alt="Imagem não disponível" class="projeto-img">
                   {% endif %}
                 </div>
+                <a class="button button-sm button-primary" href="{% url 'projeto' projeto.id %}">CONHEÇA</a>
                 <h4 class="font-weight-medium"><a href="#">{{ projeto.nome }}</a></h4>
                 <p class="box-causes-donate">
-                  <span class="box-causes-donate-complete">{{ projeto.descricao }}</span>
+                  <span class="box-causes-donate-complete">{{ projeto.subtitulo }}</span>
                 </p>
               </article>
               
