@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capa - SER DE LUZ</title>
     <style>
-        /* Estilo para o banner */
-    .main-bunner {
+    /* Estilo para o banner */
+.main-bunner {
     background-image: url('/static/images/serddeluzcapa.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Move o texto para baixo */
     align-items: center;
     text-align: center;
     padding: 20px;
     color: white;
+    padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
 }
 
         .main-bunner-title {
@@ -116,6 +117,9 @@
                                       </li>
                                       <li class="rd-nav-item {% if request.resolver_match.url_name == 'sobre' %}active{% endif %}">
                                           <a class="rd-nav-link" href="{% url 'sobre' %}">Sobre</a>
+                                      </li>
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'projeto' %}active{% endif %}">
+                                          <a class="rd-nav-link" href="{% url 'projeto' %}">Projetos</a>
                                       </li>
                                       <li class="rd-nav-item {% if request.resolver_match.url_name == 'contato' %}active{% endif %}">
                                           <a class="rd-nav-link" href="{% url 'contato' %}">Contato</a>
