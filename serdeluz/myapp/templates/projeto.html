@@ -1,122 +1,97 @@
-{% extends 'base.html' %}
-
-{% block title %}Projetos{% endblock %}
-
+@ -5,9 +5,6 @@
 {% load static %}
 
 {% block content %}
+
+
+
   <style>
+
     /* Estilos Globais */
-    .texto-destaque {
-        font-size: 42px;
-        font-weight: bold;
-        background: linear-gradient(45deg, #772cd6, #ffd42b);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-    }
-
-    .text-with-divider {
-        text-align: center;
-        font-size: 18px;
-        font-weight: 600;
-        color: #555;
-        padding: 15px;
-        border-top: 2px solid #ccc;
-        margin-top: 15px;
-    }
-
-    .text {
-        font-size: 16px;
-        text-align: justify;
-        color: #444;
-        line-height: 1.6;
-        padding: 10px;
-    }
-
-    .bg-gray-alt {
-        background-color: #f5f5f5;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .texto-destaque {
-            font-size: 32px;
-        }
-
-        .text-with-divider {
-            font-size: 16px;
-        }
-
-        .text {
+@ -55,6 +52,59 @@
             font-size: 14px;
         }
+    }
+
+    /* Efeitos Globais */
+    .row {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .row:hover {
+        transform: scale(1.02);
+        opacity: 0.95;
+    }
+
+    .img-fluid {
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilos do Botão Saiba Mais */
+    .btn-primary {
+        border-radius: 20px;
+        padding: 12px 30px;
+        font-weight: 600;
+        font-size: 18px;
+        background-color: #ffcd02;
+        color: #772cd6;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #772cd6;
+        color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    /* Detalhes do Projeto */
+    .collapse {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    .collapse p {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.8;
+    }
+
+    .collapse h5 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #772cd6;
     }
   </style>
   
   <!-- Seção do Cuscuz Solidário -->
-  <section class="section section-lg bg-gray-1 bg-gray-1-decor">
-    <div class="container">
-        <h3 class="texto-destaque">Cuscuz Solidário</h3>
-        <div class="row row-50 align-items-center">
-            <div class="col-lg-6 text-center">
-                <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="Imagem do projeto" class="img-fluid" />
-            </div>
-            <div class="col-lg-6">
-                <div class="text-with-divider">
-                    <h4 class="text-opacity-70">
-                        Todas as quintas-feiras, oferecemos uma refeição nutritiva e acolhedora para pessoas em situação de rua.
-                    </h4>
-                </div>
-                <p class="text">
-                    O projeto <strong>"A Cara da ONG"</strong> acontece semanalmente no Mercado Público de Patos-PB, levando mais do que um prato de comida: oferecemos carinho, dignidade e a certeza de que ninguém está sozinho.
-                </p>
-                <p class="text">
-                    O cuscuz foi escolhido por ser um alimento nutritivo, acessível e repleto de significado. Ele representa partilha e cuidado, sendo preparado com dedicação por nossos voluntários.
-                </p>
-                <p class="text">
-                    Com o tempo, o <strong>Cuscuz Solidário</strong> se tornou um símbolo de esperança para muitas pessoas em vulnerabilidade. Nosso objetivo é expandir essa rede de apoio, contando com parcerias e doações para atender um número ainda maior de necessitados.
-                </p>
-                <p class="text text-center">
-                    <strong>Junte-se a nós!</strong> Você pode contribuir de diversas formas: como voluntário, com doações ou divulgando essa iniciativa. Toda ajuda faz a diferença! 💜
-                </p>
-            </div>
-        </div>
-    </div>
-  </section>
-  
-  <!-- Seção de Projetos -->
-  <section class="section section-lg">
-    <div class="container">
-      <div class="row row-50">
-        {% for projeto in projetos %}
-          <div class="row align-items-center {% if forloop.counter|divisibleby:2 %} bg-gray-alt {% endif %}">
-            <div class="col-lg-6 mb-4">
-              {% if projeto.fotoprojeto %}
-                <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="img-fluid rounded shadow-sm" />
-              {% endif %}
-            </div>
-            <div class="col-lg-6">
-              <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
-              <p class="text-justify">{{ projeto.descricao }}</p>
-              <a href="#detalhes-{{ projeto.id }}" class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="detalhes-{{ projeto.id }}">Saiba mais</a>
-            </div>
-          </div>
-          
-          <!-- Detalhes do Projeto - Colapsa quando o botão é clicado -->
-          <div class="collapse" id="detalhes-{{ projeto.id }}">
-            <div class="row">
-              <div class="col-lg-12">
-                <h5 class="text-center">Detalhes do Projeto</h5>
-                <p class="text">{{ projeto.descricao }}</p>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
+@ -119,26 +169,4 @@
       </div>
     </div>
   </section>
+  <style>
+    .row {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .row:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+    .img-fluid {
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      border-radius: 20px;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
 {% endblock %}
