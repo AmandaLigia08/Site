@@ -21,7 +21,6 @@
     color: white;
     padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
 }
-
         .main-bunner-title {
             font-size: 80px;
             font-weight: bold;
@@ -34,14 +33,12 @@
             margin-bottom: 20px;
             animation: fadeInUp 2s ease-out;
         }
-
         .main-bunner p {
             max-width: 800px;
             font-size: 20px;
             line-height: 1.6;
             animation: fadeInUp 2s ease-out;
         }
-
         /* Animação */
         @keyframes fadeInUp {
             0% {
@@ -53,7 +50,6 @@
                 transform: translateY(0);
             }
         }
-
         /* Botão Doar */
         .btn-doar {
             background-color: #772cd6;
@@ -65,14 +61,12 @@
             border-radius: 5px;
             transition: 0.3s;
         }
-
         .btn-doar:hover {
             background-color: #772cd6;
         }
     </style>
 </head>
 <body>
-
     <!-- Alerta para Internet Explorer -->
     <div class="ie-panel">
         <a href="http://windows.microsoft.com/en-US/internet-explorer/">
@@ -80,7 +74,6 @@
                  alt="Você está usando um navegador desatualizado. Atualize para uma experiência melhor.">
         </a>
     </div>
-
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-body">
@@ -90,7 +83,6 @@
             <p>Loading...</p>
         </div>
     </div>
-
     <!-- Página Principal -->
     <div class="page">
         <header class="section page-header">
@@ -106,8 +98,7 @@
                                         <img class="brand-logo-serdeluz" src="{% static 'images/serdeluz_luz.png' %}" alt="Logo" width="125" height="150" />
                                     </a>
                                 </div>
-                            </div>
-                            
+                            </div>  
                             <!-- Navbar Links -->
                             <div class="rd-navbar-main-element">
                               <div class="rd-navbar-nav-wrap">
@@ -124,8 +115,6 @@
                                       <li class="rd-nav-item {% if request.resolver_match.url_name == 'contato' %}active{% endif %}">
                                           <a class="rd-nav-link" href="{% url 'contato' %}">Contato</a>
                                       </li>
-
-                                      
                                   </ul>
                               </div>
                           </div>
@@ -141,7 +130,6 @@
             </div>
         </header>
         <style>
-      
           .rd-navbar-nav {
               list-style: none;
               padding: 0;
@@ -149,13 +137,11 @@
               display: flex;
               gap: 20px;
           }
-      
           .rd-nav-item {
               padding: 10px 15px;
               border-radius: 8px;
               transition: all 0.3s ease-in-out;
           }
-      
           /* Links da navegação */
           .rd-nav-link {
               text-decoration: none;
@@ -164,23 +150,19 @@
               font-size: 18px;
               transition: color 0.3s ease-in-out;
           }
-      
           /* Hover nos itens */
           .rd-nav-item:hover {
               background-color: rgba(255, 204, 0, 0.2);
           }
-      
           /* 🔥 Destaque da página ativa */
           .rd-nav-item.active {
               background-color: #ffd42b;
               color: white;
               border-radius: 8px;
           }
-      
           .rd-nav-item.active .rd-nav-link {
               color: white;
           }
-      
           /* Estilização do botão "Doar" */
           .btn-doar {
               background: linear-gradient(45deg, #ffd42b, #772cd6);
@@ -193,7 +175,6 @@
               transition: transform 0.3s ease-in-out, background 0.3s;
               cursor: pointer;
           }
-      
           .btn-doar:hover {
               background: linear-gradient(45deg, #ffd42b, #772cd6);
               transform: scale(1.05);
@@ -214,8 +195,7 @@
         <!-- Seção Principal -->
         <div class="main-bunner">
             <h1 class="main-bunner-title">SER DE LUZ</h1>
-            <p>
-                Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.
+            <p> Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.
             </p>
         </div>
     </div>
