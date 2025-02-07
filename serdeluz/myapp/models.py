@@ -32,3 +32,4 @@ class Projeto(models.Model):
         verbose_name = 'Projeto'
         verbose_name_plural = 'Projetos'
         ordering = ['id']
+
