@@ -1,11 +1,17 @@
 from django.shortcuts import render
-from .models import Conselho, Projeto
+from .models import Conselho, Projeto, Carrocel
 
 # Listar conselheiros
 def list_Conselho(request):
     conselheiros = Conselho.objects.all() #filter(is_ativo=True)
     context = {'conselheiros': conselheiros}
     return render(request, 'list/list-conselho.html', context)
+
+# Listar conselheiros
+def list_Paralax(request):
+    carroceis = Carrocel.objects.all() #filter(is_ativo=True)
+    context = {'carroceis': carroceis}
+    return render(request, 'navbar.html', context)
 
 # Create your views here.
 def site(request):
