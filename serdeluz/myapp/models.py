@@ -33,3 +33,10 @@ class Projeto(models.Model):
         verbose_name_plural = 'Projetos'
         ordering = ['id']
 
+class Carrocel(models.Model):
+    discricao = models.CharField(max_length=100)
+    fotocarrocel = models.FileField(upload_to='carrocel', verbose_name='fotocarrocel',
+        null=True, blank=True)
+    
+    def __str__(self):
+        return "{} - {}".format(self.discricao,self.fotocarrocel)
