@@ -33,3 +33,6 @@ def chave(request):
     return render(request, 'chave.html')
 
 
+from django.shortcuts import render
+from .models import CarouselImage
+
