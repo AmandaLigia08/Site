@@ -7,51 +7,52 @@
 {% block content %}
 
   <style>
-    /* Estilos Globais */
+/* ==================== ESTILOS GLOBAIS ==================== */
+.texto-destaque {
+    font-size: 42px;
+    font-weight: bold;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.text-with-divider {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+    margin-top: 15px;
+}
+
+.text {
+    font-size: 16px;
+    text-align: justify;
+    color: #444;
+    line-height: 1.8;
+    padding: 10px;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
     .texto-destaque {
-        font-size: 42px;
-        font-weight: bold;
-        background: linear-gradient(45deg, #772cd6, #ffd42b);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 15px;
+        font-size: 32px;
     }
 
     .text-with-divider {
-        text-align: center;
-        font-size: 18px;
-        font-weight: 600;
-        color: #555;
-        padding: 15px;
-        border-top: 2px solid #ccc;
-        margin-top: 15px;
+        font-size: 16px;
     }
 
     .text {
-        font-size: 16px;
-        text-align: justify;
-        color: #444;
-        line-height: 1.6;
-        padding: 10px;
+        font-size: 14px;
     }
+}
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .texto-destaque {
-            font-size: 32px;
-        }
-
-        .text-with-divider {
-            font-size: 16px;
-        }
-
-        .text {
-            font-size: 14px;
-        }
-    }
 /* ==================== PROJETOS ==================== */
 .projeto-container {
     display: flex;
@@ -59,60 +60,57 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
 }
 
-/* Imagem do projeto centralizada */
-.projeto-img {
-    width: 400px; /* Ajusta tamanho para melhor visualização */
-    height: 400px;
-    object-fit: cover; 
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-/* Título com gradiente */
 .projeto-titulo {
     font-size: 32px;
     font-weight: bold;
-    background: linear-gradient(45deg, #772cd6, #ffcd02);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: white; /* Texto branco */
     text-transform: uppercase;
     margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
 }
 
-/* Descrição com destaque */
-.projeto-descricao {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    max-width: 80%;
+.projeto-img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(252, 251, 251, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projeto-img:hover {
+    transform: scale(1.05);
 }
 
 /* ==================== MODAL ==================== */
 .modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
-/* Efeito vidro fosco */
 .custom-modal {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
     color: white;
     transition: all 0.3s ease-in-out;
     text-align: center;
+    padding: 25px;
 }
-
-/* Cabeçalho */
+ /* Corpo do Modal */
+.custom-modal .modal-body {
+    padding: 20px;
+    font-size: 16px;
+    color: #444;
+    text-align: justify;
+}
 .custom-modal .modal-header {
     background: linear-gradient(45deg, #772cd6, #ffcd02);
     color: white;
@@ -121,18 +119,17 @@
     padding: 15px 20px;
 }
 
-/* Rodapé */
 .custom-modal .modal-footer {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    padding: 15px;
 }
 
-/* Botões */
 .custom-modal .btn {
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     transition: 0.3s;
 }
 
@@ -141,7 +138,6 @@
     color: black;
 }
 
-/* Fechar estilizado */
 .custom-modal .close {
     color: white;
     font-size: 28px;
@@ -165,10 +161,9 @@
     }
 
     .custom-modal {
-        width: 95%;
+        width: 90%;
     }
 }
-
   </style>
   
   <!-- Seção do Cuscuz Solidário -->
@@ -227,16 +222,18 @@
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document"> 
     <div class="modal-content custom-modal">
       <div class="modal-header">
-        <h5 class="modal-title">{{ projeto.titulo }}</h5>
+        <h5 class="modal-title projeto-titulo">{{ projeto.titulo }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
         {% if projeto.fotoprojeto %}
-          <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="img-fluid rounded mb-3">
+          <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="projeto-img img-fluid rounded mb-3">
         {% endif %}
-        <p>{{ projeto.descricao }}</p>
+        <div class="projeto-descricao p-3 mt-3">
+          <p class="text-highlight">{{ projeto.descricao }}</p>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
