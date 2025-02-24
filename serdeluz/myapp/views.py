@@ -36,3 +36,4 @@ def chave(request):
     return render(request, 'chave.html')
 
 
+
