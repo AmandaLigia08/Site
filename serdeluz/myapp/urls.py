@@ -10,7 +10,6 @@ urlpatterns = [
     path('contato/', views.contato, name='contato'),
     path('chave/', views.chave, name='chave'),
 
-
     
 
 ]
