@@ -67,13 +67,6 @@
     </style>
 </head>
 <body>
-    <!-- Alerta para Internet Explorer -->
-    <div class="ie-panel">
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
-            <img src="{% static 'images/SERDELUZ_CANVA.png' %}" height="42" width="820"
-                 alt="Você está usando um navegador desatualizado. Atualize para uma experiência melhor.">
-        </a>
-    </div>
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-body">
@@ -129,69 +122,6 @@
                 </nav>
             </div>
         </header>
-        <style>
-          .rd-navbar-nav {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              display: flex;
-              gap: 20px;
-          }
-          .rd-nav-item {
-              padding: 10px 15px;
-              border-radius: 8px;
-              transition: all 0.3s ease-in-out;
-          }
-          /* Links da navegação */
-          .rd-nav-link {
-              text-decoration: none;
-              color: #333;
-              font-weight: bold;
-              font-size: 18px;
-              transition: color 0.3s ease-in-out;
-          }
-          /* Hover nos itens */
-          .rd-nav-item:hover {
-              background-color: rgba(255, 204, 0, 0.2);
-          }
-          /* 🔥 Destaque da página ativa */
-          .rd-nav-item.active {
-              background-color: #ffd42b;
-              color: white;
-              border-radius: 8px;
-          }
-          .rd-nav-item.active .rd-nav-link {
-              color: white;
-          }
-          /* Estilização do botão "Doar" */
-          .btn-doar {
-              background: linear-gradient(45deg, #ffd42b, #772cd6);
-              border: none;
-              color: white;
-              font-size: 18px;
-              font-weight: bold;
-              padding: 10px 20px;
-              border-radius: 8px;
-              transition: transform 0.3s ease-in-out, background 0.3s;
-              cursor: pointer;
-          }
-          .btn-doar:hover {
-              background: linear-gradient(45deg, #ffd42b, #772cd6);
-              transform: scale(1.05);
-          }
-      
-          /* Responsividade */
-          @media (max-width: 768px) {
-              .rd-navbar-nav {
-                  flex-direction: column;
-                  text-align: center;
-              }
-              
-              .btn-doar {
-                  width: 100%;
-              }
-          }
-      </style>
         <!-- Seção Principal -->
         <div class="main-bunner">
             <h1 class="main-bunner-title">SER DE LUZ</h1>

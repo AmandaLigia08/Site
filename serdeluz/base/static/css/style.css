@@ -6996,4 +6996,299 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 		max-width: 100%;
 		height: auto;
 	}
+
+
+/* =================== ESTILOS GLOBAIS =================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =================== INDEX =================== */
+.texto-destaque {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #772cd6, #ffd42b);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.box-causes {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-causes:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.box-causes-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.projeto-img {
+    width: 100%;
+    height: auto;
+    max-width: 372px;
+    max-height: 396px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box-causes-img:hover .projeto-img {
+    transform: scale(1.05);
+}
+
+.box-causes h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.box-causes h4 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+.box-causes h4 a:hover {
+    color: #ff6a00;
+}
+
+.box-causes p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #772cd6;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5b1ea6;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .box-causes {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .projeto-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* =================== BASE =================== */
+.ie-panel {
+    display: none;
+    background: #ffd42b;
+    padding: 10px 0;
+    box-shadow: 3px 3px 5px 0 rgba(119, 44, 214, 0.3);
+    clear: both;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+html.ie-10 .ie-panel,
+html.lt-ie-10 .ie-panel {
+    display: block;
+}
+
+/* =================== SOBRE =================== */
+
+.texto-destaque {
+	font-size: 48px;
+	font-weight: bold;
+	background: linear-gradient(45deg, #772cd6, #ffd42b);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.text-with-divider {
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	color: #555;
+	padding: 20px;
+	border-top: 2px solid #ccc;
+	margin-top: 20px;
+}
+
+.text-with-divider p {
+	margin: 5px 0;
+	font-weight: 500;
+}
+
+.team-classic {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out;
+	text-align: center;
+	padding: 20px;
+	margin: 15px;
+}
+
+.team-classic:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-img {
+	width: 100%;
+	max-width: 390px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 8px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.team-classic:hover .team-img {
+	transform: scale(1.05);
+}
+
+.team-name {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 10px;
+}
+
+.team-role {
+	font-size: 18px;
+	color: #555;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+	.texto-destaque {
+		font-size: 36px;
+	}
+
+	.text-with-divider {
+		font-size: 18px;
+	}
+
+	.text-justify {
+		font-size: 16px;
+	}
+
+	.team-classic {
+		width: 90%;
+		margin: auto;
+	}
+
+	.team-img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* =================== QUEM SOMOS =================== */
+
+                  /* CSS que você forneceu */
+                  .texto-destaque {
+					font-size: 48px;
+					font-weight: bold;
+					background: linear-gradient(45deg, #772cd6, #ffd42b); /* Gradiente de cores */
+					background-clip: text; /* Aplica o gradiente ao texto */
+					color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
+					text-align: center;
+					text-transform: uppercase;     /* Deixa o texto em maiúsculas */
+				}
+
+/* =================== PROJETO  =================== */
+/* ==================== ESTILOS GLOBAIS ==================== */
+.texto-destaque {
+    font-size: 42px;
+    font-weight: bold;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.text-with-divider {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+    margin-top: 15px;
+}
+
+.text {
+    font-size: 16px;
+    text-align: justify;
+    color: #444;
+    line-height: 1.8;
+    padding: 10px;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    .texto-destaque {
+        font-size: 32px;
+    }
+
+    .text-with-divider {
+        font-size: 16px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+}
+
+/* ==================== PROJETOS ==================== */
+
+
+
 }
