@@ -12,4 +12,7 @@ urlpatterns = [
     path('chave/', views.chave, name='chave'),
 
 ]
+   
+
+
 
