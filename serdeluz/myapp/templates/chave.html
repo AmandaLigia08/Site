@@ -24,6 +24,34 @@
         </div>
     </div>
 </section>
+<script>
+    function copiarPix() {
+        var chavePix = document.getElementById("pixKey").innerText;
+        navigator.clipboard.writeText(chavePix).then(function() {
+            abrirModal(); // Exibe o modal de agradecimento
+            setTimeout(fecharModal, 5000); // Fecha o modal após 5 segundos
+        }).catch(function(error) {
+            console.error("Erro ao copiar chave PIX", error);
+        });
+    }
+
+    function abrirModal() {
+        document.getElementById("modalAgradecimento").style.display = "flex";
+    }
+
+    function fecharModal() {
+        document.getElementById("modalAgradecimento").style.display = "none";
+    }
+</script>
+<!-- Modal de Agradecimento -->
+<div id="modalAgradecimento" class="modal">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <h2>💜 Muito Obrigado pela sua doação!</h2>
+        <p>Sua generosidade ajuda muitas famílias. </p>
+        <p>Que a luz e a gratidão retornem em dobro para você! ✨</p>
+    </div>
+</div>
 
 <style>
     /* Fundo Animado para um Visual Moderno */
@@ -181,37 +209,6 @@
         to { opacity: 1; transform: scale(1); }
     }
 
-</style>
-<script>
-    function copiarPix() {
-        var chavePix = document.getElementById("pixKey").innerText;
-        navigator.clipboard.writeText(chavePix).then(function() {
-            abrirModal(); // Exibe o modal de agradecimento
-            setTimeout(fecharModal, 5000); // Fecha o modal após 5 segundos
-        }).catch(function(error) {
-            console.error("Erro ao copiar chave PIX", error);
-        });
-    }
-
-    function abrirModal() {
-        document.getElementById("modalAgradecimento").style.display = "flex";
-    }
-
-    function fecharModal() {
-        document.getElementById("modalAgradecimento").style.display = "none";
-    }
-</script>
-<!-- Modal de Agradecimento -->
-<div id="modalAgradecimento" class="modal">
-    <div class="modal-content">
-        <span class="fechar" onclick="fecharModal()">&times;</span>
-        <h2>💜 Muito Obrigado pela sua doação!</h2>
-        <p>Sua generosidade ajuda muitas famílias. </p>
-        <p>Que a luz e a gratidão retornem em dobro para você! ✨</p>
-    </div>
-</div>
-
-<style>
     /* Estilização do Modal */
     .modal {
         display: none;
