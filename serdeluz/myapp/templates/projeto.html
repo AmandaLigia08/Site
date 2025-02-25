@@ -6,177 +6,15 @@
 
 {% block content %}
 
-  <style>
-/* ==================== ESTILOS GLOBAIS ==================== */
-.texto-destaque {
-    font-size: 42px;
-    font-weight: bold;
-
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.text-with-divider {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #555;
-    padding: 15px;
-    border-top: 2px solid #ccc;
-    margin-top: 15px;
-}
-
-.text {
-    font-size: 16px;
-    text-align: justify;
-    color: #444;
-    line-height: 1.8;
-    padding: 10px;
-}
-
-/* ==================== RESPONSIVIDADE ==================== */
-@media (max-width: 768px) {
-    .texto-destaque {
-        font-size: 32px;
-    }
-
-    .text-with-divider {
-        font-size: 16px;
-    }
-
-    .text {
-        font-size: 14px;
-    }
-}
-
-/* ==================== PROJETOS ==================== */
-.projeto-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    padding: 20px;
-}
-
-.projeto-titulo {
-    font-size: 32px;
-    font-weight: bold;
-    color: white; /* Texto branco */
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-.projeto-img {
-    width: 380px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(252, 251, 251, 0.3);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-    display: block;
-    margin:auto;
-}
-
-.projeto-img:hover {
-    transform: scale(1.05);
-}
-
-/* ==================== MODAL ==================== */
-.modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-}
-
-.custom-modal {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
-    color: white;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    padding: 25px;
-}
- /* Corpo do Modal */
-.custom-modal .modal-body {
-    padding: 20px;
-    font-size: 16px;
-    color: #444;
-    text-align: justify;
-}
-.custom-modal .modal-header {
-    background: linear-gradient(45deg, #772cd6, #ffcd02);
-    color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    padding: 15px 20px;
-}
-
-.custom-modal .modal-footer {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 15px;
-}
-
-.custom-modal .btn {
-    border-radius: 20px;
-    padding: 12px 24px;
-    transition: 0.3s;
-}
-
-.custom-modal .btn-secondary:hover {
-    background: #ffcd02;
-    color: black;
-}
-
-.custom-modal .close {
-    color: white;
-    font-size: 28px;
-    opacity: 1;
-}
-
-/* ==================== RESPONSIVIDADE ==================== */
-@media (max-width: 768px) {
-    .projeto-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .projeto-titulo {
-        font-size: 28px;
-    }
-
-    .projeto-descricao {
-        font-size: 16px;
-        max-width: 90%;
-    }
-
-    .custom-modal {
-        width: 90%;
-    }
-}
-  </style>
-  
-  <!-- Seção do Cuscuz Solidário -->
-  <section class="section section-lg bg-gray-1 bg-gray-1-decor">
-    <div class="container">
-        <h3 class="texto-destaque">Cuscuz Solidário</h3>
-        <div class="row row-50 align-items-center">
-            <div class="col-lg-6 text-center">
-                <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="Imagem do projeto" class="img-fluid" />
-            </div>
+<!-- Seção do Cuscuz Solidário -->
+<section class="section section-lg bg-gray-1 bg-gray-1-decor">
+  <div class="container">
+      <div class="row row-50">
+          <div class="col-lg-6 pr-xl-5">
+            <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="Imagem do projeto" class="projeto-img" />
+          </div>
             <div class="col-lg-6">
+              <h3 class="texto-destaque">Cuzcus Solidário</h3>
                 <div class="text-with-divider">
                     <h4 class="text-opacity-70">
                         Todas as quintas-feiras, oferecemos uma refeição nutritiva e acolhedora para pessoas em situação de rua.
@@ -205,14 +43,14 @@
     <div class="row row-50">
       {% for projeto in projetos %}
         <div class="row align-items-center {% if forloop.counter|divisibleby:2 %} flex-row-reverse bg-gray-1 {% else %} bg-default {% endif %}">
-          <div class="col-lg-6 mb-4">
+          <div class="col-lg-6 mb-4 text-center">
             {% if projeto.fotoprojeto %}
-            <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="projeto-img img-fluid rounded shadow-sm" />            
+            <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="projeto-img" />
             {% endif %}
           </div>
           <div class="col-lg-6">
-            <h4 class="text-opacity-70">{{ projeto.titulo }}</h4>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProjeto-{{ projeto.id }}">
+            <h4 class="projeto-titulo">{{ projeto.titulo }}</h4>
+            <button type="button" class="btn-doar" data-toggle="modal" data-target="#modalProjeto-{{ projeto.id }}">
               Saiba mais
             </button>
           </div>
@@ -230,7 +68,7 @@
       </div>
       <div class="modal-body text-center">
         {% if projeto.fotoprojeto %}
-          <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="projeto-img img-fluid rounded mb-3">
+          <img src="{{ projeto.fotoprojeto.url }}" alt="{{ projeto.titulo }}" class="projeto-img">
         {% endif %}
         <div class="projeto-descricao p-3 mt-3">
           <p class="text-highlight">{{ projeto.descricao }}</p>
