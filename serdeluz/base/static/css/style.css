@@ -1,26 +1,18 @@
-@charset "UTF-8";
-
 /* ==================== ESTILOS GLOBAIS ==================== */
 body {
-    font-family: Arial, sans-serif;
-    color: #444;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.texto-destaque {
-    font-size: 36px;
-    font-weight: bold;
-    color: #222;
+.section {
+    padding: 60px 0;
+}
+
+.text-center {
     text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.text {
-    font-size: 16px;
-    text-align: justify;
-    padding: 10px;
 }
 
 /* ==================== PROJETOS ==================== */
@@ -30,84 +22,254 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
-.projeto-titulo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #222;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
+/* Mantém todas as imagens do mesmo tamanho */
 .projeto-img {
-    width: 380px;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Mantém proporção sem distorcer */
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; /* Centraliza a imagem */
 }
 
+/* Efeito hover */
 .projeto-img:hover {
     transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajusta o layout da barra cinza e branca */
+.bg-gray-1 .projeto-img,
+.bg-default .projeto-img {
+    width: 300px; /* Garante que o tamanho é idêntico */
+    height: 300px;
 }
 
 /* ==================== MODAL ==================== */
-.modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-}
-
 .custom-modal {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(240, 240, 240, 0.95);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
-    color: #222;
-    text-align: center;
+    color: #333;
     padding: 25px;
+    text-align: center;
 }
 
-.custom-modal .modal-header,
+.custom-modal .modal-header {
+    background: #772cd6;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 15px 20px;
+}
+
 .custom-modal .modal-footer {
-    background: rgba(240, 240, 240, 0.9);
-    border-radius: 15px;
+    background: #f1f1f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     padding: 15px;
 }
 
 .custom-modal .btn {
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 10px 20px;
-    transition: 0.3s;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
 }
 
 .custom-modal .btn-secondary:hover {
-    background: #222;
-    color: #fff;
-}
-
-.custom-modal .close {
-    color: #222;
-    font-size: 24px;
-    opacity: 1;
-    cursor: pointer;
+    background: #ffcd02;
+    color: black;
 }
 
 /* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 768px) {
     .projeto-img {
-        width: 280px;
-        height: 280px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* ==================== CONTATO ==================== */
+
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Caixa de Contato */
+.box-icon-classic {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+}
+
+.box-icon-classic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.box-icon-classic .icon-xl {
+    font-size: 50px;
+    color: #772cd6;
+    margin-bottom: 15px;
+}
+
+.box-icon-classic h4 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.box-icon-classic h4 a:hover {
+    color: #772cd6;
+}
+
+/* Formulário de Contato */
+.rd-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.rd-form:hover {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+.form-input:focus {
+    border-color: #772cd6;
+    box-shadow: 0 0 6px rgba(119, 44, 214, 0.3);
+    outline: none;
+    background-color: #fff;
+}
+
+.form-label {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 14px;
+    color: #777;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -14px;
+    left: 12px;
+    font-size: 12px;
+    color: #772cd6;
+    font-weight: bold;
+}
+
+textarea.form-input {
+    resize: none;
+    height: 120px;
+}
+
+/* Botão de Envio */
+.button-primary {
+    background: linear-gradient(45deg, #772cd6, #5a1aa8);
+    color: #fff;
+    padding: 14px 22px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary:hover {
+    background: linear-gradient(45deg, #5a1aa8, #772cd6);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 20px;
     }
 
-    .projeto-titulo {
-        font-size: 24px;
+    .box-icon-classic {
+        margin: 10px;
+        padding: 20px;
     }
 
-    .custom-modal {
-        width: 95%;
+    .rd-form {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .button-primary {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
+
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    .projeto-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .contact-container {
+        padding: 40px 15px;
+    }
+
+    .contact-title {
+        font-size: 28px;
+    }
+
+    .form-input {
+        font-size: 14px;
+    }
+
+    .button-primary {
+        font-size: 16px;
     }
 }
