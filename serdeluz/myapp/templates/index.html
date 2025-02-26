@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
   Início
 {% endblock %}
@@ -18,6 +19,18 @@
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <title>Exemplo de Gradiente no Texto</title>
+              <style>
+                  /* CSS que você forneceu */
+                  .texto-destaque {
+                      font-size: 48px;
+                      font-weight: bold;
+                      background: linear-gradient(45deg, #772cd6, #ffd42b); /* Gradiente de cores */
+                      background-clip: text; /* Aplica o gradiente ao texto */
+                      color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
+                      text-align: center;
+                      text-transform: uppercase;     /* Deixa o texto em maiúsculas */
+                  }
+              </style>
           </head>
           <body>
               <h3 class="texto-destaque">Projetos Ser de Luz</h3>
@@ -45,9 +58,105 @@
                 </p>
                 <!-- Botão para ver mais projetos -->
                     <div class="text-center mt-4">
-                      <a href="{{ projeto.html }}" class="btn btn-primary btn-lg">Ver mais projetos</a>
+                      <a href="{% url 'projeto' %}" class="btn btn-primary btn-lg">Ver mais projetos</a>
                     </div>
-              </article>            
+              </article>
+              
+              <style>
+                  /* Container Principal */
+                  .box-causes {
+                      background: #fff;
+                      border-radius: 12px;
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                      overflow: hidden;
+                      transition: all 0.3s ease-in-out;
+                      padding: 20px;
+                      text-align: center;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                  }
+              
+                  .box-causes:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+                  }
+              
+                  /* Imagem do Projeto */
+                  .box-causes-img {
+                      width: 100%;
+                      overflow: hidden;
+                      border-radius: 8px;
+                  }
+              
+                  .projeto-img {
+                      width: 100%;
+                      height: auto;
+                      max-width: 372px;
+                      max-height: 396px;
+                      object-fit: cover;
+                      border-radius: 8px;
+                      transition: transform 0.3s ease-in-out;
+                  }
+              
+                  .box-causes-img:hover .projeto-img {
+                      transform: scale(1.05);
+                  }
+              
+                  /* Título */
+                  .box-causes h4 {
+                      font-size: 20px;
+                      font-weight: bold;
+                      margin-top: 15px;
+                      color: #333;
+                  }
+              
+                  .box-causes h4 a {
+                      text-decoration: none;
+                      color: inherit;
+                      transition: color 0.3s ease-in-out;
+                  }
+              
+                  .box-causes h4 a:hover {
+                      color: #ff6a00;
+                  }
+              
+                  /* Descrição */
+                  .box-causes p {
+                      font-size: 16px;
+                      color: #666;
+                      margin-top: 10px;
+                      line-height: 1.6;
+                  }
+              
+                  /* Responsividade */
+                  @media (max-width: 768px) {
+                      .box-causes {
+                          width: 90%;
+                          margin: auto;
+                      }
+                      
+                      .projeto-img {
+                          max-width: 100%;
+                          height: auto;
+                      }
+                  }
+                  /* Botão de mais projetos */
+                  .btn-primary {
+                    border-radius: 25px;
+                    padding: 12px 25px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    background-color: #772cd6;
+                    border: none;
+                    transition: all 0.3s ease;
+                  }
+
+                  .btn-primary:hover {
+                    background-color: #5b1ea6;
+                    transform: scale(1.05);
+                  }
+              </style>              
             </div>
           </div>
         {% endfor %}        

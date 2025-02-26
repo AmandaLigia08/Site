@@ -15,9 +15,8 @@ def list_Paralax(request):
 
 # Create your views here.
 def site(request):
-    carrocel = Carrocel.objects.all()
     projetos = Projeto.objects.filter(is_ativo=False)
-    context = {'carrocel': carrocel, 'projetos': projetos}
+    context = {'projetos': projetos}
     return render(request, 'index.html', context)
 
 def sobre(request):
@@ -35,5 +34,6 @@ def contato(request):
 
 def chave(request):
     return render(request, 'chave.html')
+
 
 

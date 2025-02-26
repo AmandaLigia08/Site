@@ -5,7 +5,136 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<style>
+    /* Estilos Globais */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /* Caixa de Contato */
+    .box-icon-classic {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    .box-icon-classic:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .box-icon-classic .icon-xl {
+        font-size: 50px;
+        color: #772cd6;
+        margin-bottom: 15px;
+    }
+
+    .box-icon-classic h4 a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .box-icon-classic h4 a:hover {
+        color: #772cd6;
+    }
+
+    /* Formulário de Contato */
+    .rd-form {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .form-wrap {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-input:focus {
+        border-color: #772cd6;
+        box-shadow: 0 0 5px rgba(119, 44, 214, 0.3);
+        outline: none;
+    }
+
+    .form-label {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        font-size: 14px;
+        color: #777;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .form-input:focus + .form-label,
+    .form-input:not(:placeholder-shown) + .form-label {
+        top: -15px;
+        left: 10px;
+        font-size: 12px;
+        color: #772cd6;
+    }
+
+    textarea.form-input {
+        resize: none;
+        height: 120px;
+    }
+
+    /* Botão */
+    .button-primary {
+        background: #772cd6;
+        color: #fff;
+        padding: 12px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .button-primary:hover {
+        background: #5a1aa8;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .section {
+            padding: 40px 20px;
+        }
+
+        .box-icon-classic {
+            margin: 10px;
+            padding: 20px;
+        }
+    }
+</style>
 
 <section class="section text-center bg-default">
     <div class="container">
@@ -56,134 +185,6 @@
             <button class="button button-primary" type="submit">Enviar</button>
         </form>
     </div>
-<style>/* Estilos Globais */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    /* Caixa de Contato */
-    .box-icon-classic {
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        text-align: center;
-    }
-    
-    .box-icon-classic:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .box-icon-classic .icon-xl {
-        font-size: 50px;
-        color: #772cd6;
-        margin-bottom: 15px;
-    }
-    
-    .box-icon-classic h4 a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        transition: color 0.3s ease-in-out;
-    }
-    
-    .box-icon-classic h4 a:hover {
-        color: #772cd6;
-    }
-    
-    /* Formulário de Contato */
-    .rd-form {
-        background: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
-        max-width: 600px;
-        margin: auto;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .rd-form:hover {
-        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-    }
-    
-    .form-group {
-        position: relative;
-        margin-bottom: 20px;
-    }
-    
-    .form-input {
-        width: 100%;
-        padding: 14px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        transition: all 0.3s ease-in-out;
-        background-color: #f9f9f9;
-    }
-    
-    .form-input:focus {
-        border-color: #772cd6;
-        box-shadow: 0 0 6px rgba(119, 44, 214, 0.3);
-        outline: none;
-        background-color: #fff;
-    }
-    
-    .form-label {
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        font-size: 14px;
-        color: #777;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    .form-input:focus + .form-label,
-    .form-input:not(:placeholder-shown) + .form-label {
-        top: -14px;
-        left: 12px;
-        font-size: 12px;
-        color: #772cd6;
-        font-weight: bold;
-    }
-    
-    textarea.form-input {
-        resize: none;
-        height: 120px;
-    }
-    
-    /* Botão de Envio */
-    .button-primary {
-        background: linear-gradient(45deg, #772cd6, #5a1aa8);
-        color: #fff;
-        padding: 14px 22px;
-        font-size: 18px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        width: 100%;
-        font-weight: bold;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .button-primary:hover {
-        background: linear-gradient(45deg, #5a1aa8, #772cd6);
-        transform: scale(1.05);
-        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-    }
-    </style>
 </section>
 
 {% endblock %}

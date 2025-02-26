@@ -4,20 +4,14 @@ from myapp import views
 
 urlpatterns = [
     #paginas
-    path('', views.site, name='index'), 
     path('index/', views.site, name='index'), 
     path('sobre/', views.sobre, name='sobre'), 
     path('projeto/', views.projeto, name='projeto'),
     path('contato/', views.contato, name='contato'),
     path('chave/', views.chave, name='chave'),
 
-<<<<<<< HEAD
-=======
+
     
 
->>>>>>> parent of 200f477 (pontão ver mais projetos do index)
 ]
-   
-
-
 
