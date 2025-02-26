@@ -11,6 +11,11 @@ urlpatterns = [
     path('contato/', views.contato, name='contato'),
     path('chave/', views.chave, name='chave'),
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> parent of 200f477 (pontão ver mais projetos do index)
 ]
    
 
