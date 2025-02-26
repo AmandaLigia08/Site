@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+
+{% block title %}Sobre{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    /* Estilos Globais */
+    .texto-destaque {
+        font-size: 48px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #772cd6, #ffd42b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: left;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    .text-with-divider {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 6000;
+        color: #555;
+        padding: 20px;
+        border-top: 2px solid #ccc;
+        margin-top: 20px;
+    }
+    .text-with-divider p {
+        margin: 5px 0;
+        font-weight: 500;
+    }
+ /* Estilo da Equipe */
+ .team-classic {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        text-align: center;
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .team-classic:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-img {
+        width: 100%;
+        max-width: 390px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .team-classic:hover .team-img {
+        transform: scale(1.05);
+    }
+
+    .team-name {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .team-role {
+        font-size: 18px;
+        color: #555;
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .texto-destaque {
+            font-size: 36px;
+        }
+
+        .text-with-divider {
+            font-size: 18px;
+        }
+
+        .text-justify {
+            font-size: 16px;
+        }
+
+        .team-classic {
+            width: 90%;
+            margin: auto;
+        }
+
+        .team-img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+</style>
+<section class="section section-lg bg-gray-1 bg-gray-1-decor">
+    <div class="container">
+        <div class="row row-50">
+            <div class="col-lg-6 pr-xl-5">
+                <img src="{% static 'images/serdeluz_geral.jpg' %}" alt="" width="518" height="430" />
+            </div>
+            <div class="col-lg-6">
+                <h3 class="texto-destaque">Sobre nós</h3>
+                <div class="text-with-divider">
+                    <h4>Organização não governamental (ONG)  Há 4 anos transformando vidas. ✨</h4>
+                    <p>+ de 180 voluntários;</p>
+                    <p>+ de 20 comunidades assistidas;</p>
+                    <p>+ de 20 toneladas de alimentos entregues.</p>
+                </div>
+                <p class="text-justify">
+                    A ONG Ser de Luz teve origem em Patos, interior da Paraíba, em junho de 2019, com a missão de iluminar vidas através de ações solidárias de impacto social.
+                </p>
+                <p class="text-justify">
+                    Desde sua fundação, o objetivo principal tem sido alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural. Através de iniciativas como distribuição de alimentos, apoio à saúde, educação e outros programas sociais, a ONG tem trabalhado incansavelmente para oferecer esperança, dignidade e oportunidades para aqueles que mais precisam.
+                </p>
+                <p class="text-justify">
+                    Hoje, com subgrupos específicos, a ONG Ser de Luz amplia seu impacto e alcance. Esses subgrupos são especializados em diferentes áreas, permitindo uma abordagem mais focada e eficiente nas necessidades das comunidades atendidas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-lg bg-default">
+    <div class="container">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Exemplo de Gradiente no Texto</title>
+            <style>
+                .texto-destaque {
+                    font-size: 48px;
+                    font-weight: bold;
+                    background: linear-gradient(45deg, #ff6f61, #6fa3ff); /* Gradiente de cores */
+                    background-clip: text; /* Aplica o gradiente ao texto */
+                    color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
+                    text-align: center;
+                    text-transform: uppercase;     /* Deixa o texto em maiúsculas */
+                }
+            </style>
+        </head>
+        <body>
+            <h3 class="texto-destaque">GRUPOS DE LUZ</h3>
+        </body>
+        </html>
+        </br>
+        </br>
+        <div class="row row-30 row-md-40 row-xl-60">
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-triangle"><span
+                            class="icon-xl fa-solid fa-cutlery icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">Fome</h4>
+                        <p>Uma iniciativa da ONG Ser de Luz dedicada à arrecadação e distribuição de alimentos para famílias em situação de vulnerabilidade. O projeto visa combater a insegurança alimentar, garantindo que todos tenham acesso a refeições nutritivas e adequadas, promovendo assim a dignidade e o bem-estar das comunidades atendidas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-triangle"><span
+                            class="icon-xl fa fa-solid fa-handshake-o icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">População de Rua</h4>
+                        <p class="text-justify">Uma ação da ONG Ser de Luz que oferece assistência integral a pessoas em situação de rua, incluindo distribuição de alimentos, roupas, atendimento médico e apoio psicológico. O objetivo é promover a reintegração social e proporcionar melhores condições de vida para essa população vulnerável.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-triangle"><span
+                        class="icon-xl fa fa-solid fa-star icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">Cultura</h4>
+                        <p class="text-justify">Uma iniciativa da ONG Ser de Luz que promove atividades culturais e artísticas nas comunidades, incluindo oficinas, eventos e apresentações. O objetivo é valorizar a diversidade cultural, incentivar a expressão artística e fortalecer o senso de identidade e pertencimento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa-solid fa-child icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">Crianças</h4>
+                        <p class="text-justify">Uma ação da ONG Ser de Luz voltada para o desenvolvimento e bem-estar infantil, oferecendo atividades educativas, recreativas e de apoio social. O objetivo é proporcionar um ambiente seguro e estimulante para as crianças, promovendo seu crescimento saudável e integral.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-triangle"><span class="icon-xl fa-solid fa-paw icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">Animais de Rua</h4>
+                        <p class="text-justify">Uma iniciativa da ONG Ser de Luz que oferece cuidados e proteção para animais em situação de rua, incluindo resgate, alimentação, atendimento veterinário e campanhas de adoção. O objetivo é reduzir o abandono e promover o bem-estar animal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-circle"><span class="icon-xl fa-solid fa-user-md icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="text-justify">Saúde</h4>
+                        <pclass="text-justify">Uma ação da ONG Ser de Luz que oferece serviços de atendimento médico básico, campanhas de vacinação, distribuição de medicamentos e orientação sobre higiene e saúde. O objetivo é
+                        promover o bem-estar e melhorar a qualidade de vida das comunidades atendidas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4"></div>
+            <div class="col-md-6 col-lg-4">
+                <div class="box-icon-modern">
+                    <div class="box-icon-inner decorate-rectangle"><span class="icon-xl fa-solid fa-home icon-primary"></span>
+                    </div>
+                    <div class="box-icon-caption">
+                        <h4 class="strong-title">Idosos</h4>
+                        <p class="text-justify">Uma iniciativa da ONG Ser de Luz dedicada ao cuidado e suporte para a terceira idade, oferecendo atividades sociais, acompanhamento médico, assistência e promoção do bem-estar. O objetivo é garantir dignidade, inclusão e qualidade de vida para os idosos.</p>
+                    </div>
+                </div>
+            </div>
+</section>
+<section class="section section-lg bg-gray-1">
+    <div class="container">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Exemplo de Gradiente no Texto</title>
+            <style>
+                /* CSS que você forneceu */
+                .texto-destaque {
+                    font-size: 48px;
+                    font-weight: bold;
+                    background: linear-gradient(45deg, #772cd6, #ffd42b); /* Gradiente de cores */
+                    background-clip: text; /* Aplica o gradiente ao texto */
+                    color: transparent;            /* Torna o texto transparente para mostrar o gradiente */
+                    text-align: center;
+                    text-transform: uppercase;     /* Deixa o texto em maiúsculas */
+                }
+            </style>
+        </head>
+                <h3 class="texto-destaque">Conselho</h3>
+                <br>
+                <div class="row no-gutters">
+                    {% for conselheiro in conselheiros %}
+                    <div class="col-md-6 col-lg-4">
+                            <div class="team-classic">
+                                <div class="team-classic-figure">
+                                    {% if conselheiro.foto %}
+                                    <img src="{{ conselheiro.foto.url }}" alt="" class="team-img" />
+                                    {% endif %}
+                                    <ul class="team-classic-soc-list">
+                                        <li><a class="icon-xl icon-md fa-brands fa-instagram" href="{{ conselheiro.instagra }}"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="team-classic-info">
+                                    <h4 class="team-name">{{ conselheiro.name }}</h4>
+                                    <p class="team-role">{{ conselheiro.funcao }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <style>
+            .texto-destaque {
+                font-size: 48px;
+                font-weight: bold;
+                background: linear-gradient(45deg, #772cd6, #ffd42b);
+                background-clip: text;
+                color: transparent;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        
+            .team-classic {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease-in-out;
+                text-align: center;
+
+            }
+            .team-classic:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            }
+        
+            .team-img {
+                width: 100%;
+                max-width: 390px;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+            }
+            .team-classic:hover .team-img {
+                transform: scale(1.05);
+            }
+        
+            .team-name {
+                font-size: 22px;
+                font-weight: bold;
+                color: #333;
+                margin-top: 10px;
+            }
+        
+            .team-role {
+                font-size: 18px;
+                color: #555;
+                font-style: italic;
+                margin-top: 5px;
+            }
+        
+            @media (max-width: 768px) {
+                .team-classic {
+                    width: 90%;
+                    margin: auto;
+                }
+                .team-img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        </style>
+        
+        {% endblock %}
+        
