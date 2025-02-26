@@ -4,6 +4,7 @@ from myapp import views
 
 urlpatterns = [
     #paginas
+    path('', views.site, name='index'), 
     path('index/', views.site, name='index'), 
     path('sobre/', views.sobre, name='sobre'), 
     path('projeto/', views.projeto, name='projeto'),
