@@ -201,6 +201,7 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .section {
     padding: 60px 0;
 }
@@ -218,6 +219,8 @@ body {
     text-align: center;
     padding: 40px 20px;
 =======
+=======
+>>>>>>> Stashed changes
 h1,
 h2,
 h3,
@@ -796,9 +799,12 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .text-center {
     text-align: center;
 =======
+=======
+>>>>>>> Stashed changes
 .box-icon-caption *+p {
 	margin-top: 20px;
 >>>>>>> Stashed changes
@@ -815,10 +821,13 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .box-icon-classic:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 =======
+=======
+>>>>>>> Stashed changes
 .box-icon-classic>*+* {
 	margin-top: 25px;
 >>>>>>> Stashed changes
@@ -2495,10 +2504,13 @@ hr {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .form-group {
     position: relative;
     margin-bottom: 20px;
 =======
+=======
+>>>>>>> Stashed changes
 *+.rd-form {
 	margin-top: 20px;
 }
@@ -7781,5 +7793,9 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 
 .btn-doar:hover {
 	background-color: #772cd6;
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes
