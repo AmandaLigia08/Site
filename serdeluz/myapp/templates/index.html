@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="row row-50">
-        {% for projeto in projetos %}
+        {% for projeto in projetos|slice:":3" %}
           <div class="col-md-6 col-lg-4 wow-outer">
             <div class="wow fadeInUp">
               <article class="box-causes">
@@ -56,10 +56,9 @@
                 <p class="box-causes-donate">
                   <span class="box-causes-donate-complete">{{ projeto.titulo }}</span>
                 </p>
-                <!-- Botão para ver mais projetos -->
-                    <div class="text-center mt-4">
-                      <a href="{% url 'projeto' %}" class="btn btn-primary btn-lg">Ver mais projetos</a>
-                    </div>
+                <div class="text-center mt-4">
+                  <a href="{% url 'projeto' %}" class="btn btn-primary btn-lg">Ver mais projetos</a>
+                </div>
               </article>
               
               <style>

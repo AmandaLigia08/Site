@@ -35,5 +35,10 @@ def contato(request):
 def chave(request):
     return render(request, 'chave.html')
 
+from django.shortcuts import render
+from .models import Projeto  # Substitua pelo nome correto do seu modelo
 
+def home(request):
+    projetos_destaque = Projeto.objects.all()[:3]  # Pega apenas os 3 primeiros projetos
+    return render(request, 'seu_template.html', {'projetos': projetos_destaque})
 
