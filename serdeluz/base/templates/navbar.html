@@ -112,6 +112,9 @@
                                       <li class="rd-nav-item {% if request.resolver_match.url_name == 'contato' %}active{% endif %}">
                                           <a class="rd-nav-link" href="{% url 'contato' %}">Contato</a>
                                       </li>
+                                      <li class="rd-nav-item {% if request.resolver_match.url_name == 'portal' %}active{% endif %}">
+                                        <a class="rd-nav-link" href="{% url 'portal' %}">Portal do Voluntário</a>
+                                    </li>
                                   </ul>
                               </div>
                           </div>

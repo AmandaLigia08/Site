@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Voluntariado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #772cd6;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5b1ea6;
+            transform: scale(1.05);
+        }
+
+        .link {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #772cd6;
+            font-weight: bold;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .box-causes {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .projeto-img {
+            width: 100%;
+            max-width: 372px;
+            max-height: 396px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .box-causes:hover .projeto-img {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #772cd6;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #5b1ea6;
+            transform: scale(1.05);
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #ff6a00;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background-color: #d45500;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Portal de Voluntariado</h1>
+        <a class="link" href="{% url 'logout' %}">Sair</a>
+    </div>
+
+    <div class="container">
+        <h2>Registrar</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrar</button>
+        </form>
+        <a class="link" href="{% url 'login' %}">Já tem uma conta? Faça login</a>
+    </div>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Entrar</button>
+        </form>
+        <a class="link" href="{% url 'registro' %}">Criar uma conta</a>
+    </div>
+
+    <div class="box-causes">
+        <div class="box-causes-img">
+            <img class="projeto-img" src="{% static 'images/Ser_de_Luz.png' %}" alt="Projeto Ser de Luz">
+        </div>        
+        <h4><a href="#">Projeto de Ajuda Comunitária</a></h4>
+        <p>Seja um voluntário e ajude a transformar vidas!</p>
+        <a href="https://www.instagram.com/serdeluzpb/" target="_blank">
+            <button class="btn-primary">Saiba Mais</button>
+        </a>
+    </div>
+    <a href="{% url 'index' %}" class="btn-back">Voltar para Página Principal</a>
+</body>
+</html>

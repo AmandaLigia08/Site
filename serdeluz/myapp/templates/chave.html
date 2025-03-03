@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row row-50 justify-content-lg-between align-items-lg-center">
             <div class="col-lg-6 text-center">
+                <a href="{% url 'index' %}" class="btn-voltar">⬅ Voltar para Página Principal</a>
                 <h2 class="texto-destaque">Doe e Ajude Famílias</h2>
                 <p class="subtexto-destaque">Sua doação faz a diferença! Contribua via PIX e ajude famílias em situação de vulnerabilidade.</p>
                 <div class="pix-container">
@@ -180,6 +181,24 @@
         from { opacity: 0; transform: scale(0.9); }
         to { opacity: 1; transform: scale(1); }
     }
+    .btn-voltar {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #4A00E0;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn-voltar:hover {
+    background-color: #FFA500;
+    transform: scale(1.05);
+}
+
 
 </style>
 <script>
