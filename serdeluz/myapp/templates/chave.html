@@ -202,18 +202,24 @@
 
 </style>
 <script>
+    // Certifica-se de que o modal está oculto ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("modalAgradecimento").style.display = "none";
+    });
+
     function copiarPix() {
         var chavePix = document.getElementById("pixKey").innerText;
-        navigator.clipboard.writeText(chavePix).then(function() {
-            abrirModal(); // Exibe o modal de agradecimento
-            setTimeout(fecharModal, 5000); // Fecha o modal após 5 segundos
-        }).catch(function(error) {
+        navigator.clipboard.writeText(chavePix).then(function () {
+            abrirModal(); // Exibe o modal de agradecimento somente após copiar a chave
+        }).catch(function (error) {
             console.error("Erro ao copiar chave PIX", error);
         });
     }
 
     function abrirModal() {
-        document.getElementById("modalAgradecimento").style.display = "flex";
+        var modal = document.getElementById("modalAgradecimento");
+        modal.style.display = "flex"; // Mostra o modal
+        setTimeout(fecharModal, 5000); // Fecha após 5 segundos
     }
 
     function fecharModal() {
