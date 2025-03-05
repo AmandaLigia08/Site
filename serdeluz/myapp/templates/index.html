@@ -55,6 +55,7 @@
                 <h4 class="font-weight-medium"><a href="#">{{ projeto.nome }}</a></h4>
                 <p class="box-causes-donate">
                   <span class="box-causes-donate-complete">{{ projeto.titulo }}</span>
+                  <span class="text-highlight">{{ projeto.subtitulo }}</span>
                 </p>
                 <div class="text-center mt-4">
                   <a href="{% url 'projeto' %}" class="btn btn-primary btn-lg">Ver mais projetos</a>
@@ -155,6 +156,17 @@
                     background-color: #5b1ea6;
                     transform: scale(1.05);
                   }
+                  .box-causes-donate-complete {
+                      font-weight: bold;
+                      display: block; /* Quebra para a próxima linha */
+                      margin-bottom: 5px;
+                  }
+
+                  .text-highlight {
+                      color: #f4ee69; /* Altere para a cor desejada */
+                      font-weight: 600;
+                  }
+
               </style>              
             </div>
           </div>
