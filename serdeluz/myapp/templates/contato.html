@@ -43,17 +43,6 @@
         margin-bottom: 15px;
     }
 
-    .box-icon-classic h4 a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        transition: color 0.3s;
-    }
-
-    .box-icon-classic h4 a:hover {
-        color: #772cd6;
-    }
-
     /* Formulário de Contato */
     .rd-form {
         background: #fff;
@@ -65,7 +54,6 @@
     }
 
     .form-wrap {
-        position: relative;
         margin-bottom: 20px;
     }
 
@@ -75,38 +63,8 @@
         border-radius: 8px;
         border: 1px solid #ccc;
         font-size: 16px;
-        transition: all 0.3s ease-in-out;
     }
 
-    .form-input:focus {
-        border-color: #772cd6;
-        box-shadow: 0 0 5px rgba(119, 44, 214, 0.3);
-        outline: none;
-    }
-
-    .form-label {
-        position: absolute;
-        top: 10px;
-        left: 12px;
-        font-size: 14px;
-        color: #777;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .form-input:focus + .form-label,
-    .form-input:not(:placeholder-shown) + .form-label {
-        top: -15px;
-        left: 10px;
-        font-size: 12px;
-        color: #772cd6;
-    }
-
-    textarea.form-input {
-        resize: none;
-        height: 120px;
-    }
-
-    /* Botão */
     .button-primary {
         background: #772cd6;
         color: #fff;
@@ -115,26 +73,82 @@
         border: none;
         border-radius: 8px;
         cursor: pointer;
-        transition: background 0.3s ease-in-out;
         width: 100%;
     }
 
     .button-primary:hover {
         background: #5a1aa8;
     }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .section {
-            padding: 40px 20px;
-        }
-
-        .box-icon-classic {
-            margin: 10px;
-            padding: 20px;
-        }
-    }
 </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("saTt1aqyAlTstrYk1");
+
+    function sendEmail(event) {
+        event.preventDefault();
+
+        const form = document.getElementById("contact-form");
+
+        // Validação antes de enviar
+        if (!validateEmail() || !validatePhone()) {
+            return;
+        }
+
+        emailjs.sendForm("service_y9iayev", "template_3glndmj", form)
+            .then(() => {
+                document.getElementById("message").innerText = "E-mail enviado com sucesso!";
+                form.reset();
+            })
+            .catch((error) => {
+                document.getElementById("message").innerText = "Erro ao enviar. Tente novamente.";
+                console.error("Erro:", error);
+            });
+    }
+
+    function validateEmail() {
+        let email = $("#contact-email").val();
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(email)) {
+            alert("Por favor, insira um e-mail válido!");
+            $("#contact-email").val("");
+            return false;
+        }
+        return true;
+    }
+
+    function validatePhone() {
+        let phone = $("#contact-phone").val();
+        let regex = /^\(\d{2}\) \d{5}-\d{4}$/;
+        if (!regex.test(phone)) {
+            alert("Por favor, insira um número válido no formato (XX) XXXXX-XXXX!");
+            $("#contact-phone").val("");
+            return false;
+        }
+        return true;
+    }
+
+    $(document).ready(function () {
+        // Máscara de telefone
+        $("#contact-phone").on("input", function () {
+            let value = $(this).val();
+            let formatted = value.replace(/\D/g, ""); // Remove tudo que não for número
+
+            if (formatted.length > 2) {
+                formatted = `(${formatted.substring(0, 2)}) ${formatted.substring(2)}`;
+            }
+            if (formatted.length > 10) {
+                formatted = `${formatted.substring(0, 10)}-${formatted.substring(10, 15)}`;
+            }
+            $(this).val(formatted);
+        });
+
+        // Validação ao sair do campo
+        $("#contact-email").on("blur", validateEmail);
+        $("#contact-phone").on("blur", validatePhone);
+    });
+</script>
 
 <section class="section text-center bg-default">
     <div class="container">
@@ -165,24 +179,21 @@
 <section class="section bg-gray-1 text-center">
     <div class="container">
         <h3>Entrar em Contato</h3>
-        <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+        <form id="contact-form" class="rd-form rd-mailform" onsubmit="sendEmail(event)">
             <div class="form-wrap">
-                <input class="form-input" id="contact-name" type="text" name="name" placeholder=" " required>
-                <label class="form-label" for="contact-name">Seu Nome</label>
+                <input class="form-input" id="contact-name" type="text" name="name" required placeholder="Seu Nome">
             </div>
             <div class="form-wrap">
-                <input class="form-input" id="contact-email" type="email" name="email" placeholder=" " required>
-                <label class="form-label" for="contact-email">E-mail</label>
+                <input class="form-input" id="contact-email" type="email" name="email" required placeholder="E-mail">
             </div>
             <div class="form-wrap">
-                <input class="form-input" id="contact-phone" type="text" name="phone" placeholder=" ">
-                <label class="form-label" for="contact-phone">Telefone</label>
+                <input class="form-input" id="contact-phone" type="text" name="phone" required placeholder="(XX) XXXXX-XXXX" maxlength="15">
             </div>
             <div class="form-wrap">
-                <textarea class="form-input" id="contact-message" name="message" placeholder=" " required></textarea>
-                <label class="form-label" for="contact-message">Mensagem</label>
+                <textarea class="form-input" id="contact-message" name="message" required placeholder="Mensagem"></textarea>
             </div>
             <button class="button button-primary" type="submit">Enviar</button>
+            <p id="message"></p>
         </form>
     </div>
 </section>
