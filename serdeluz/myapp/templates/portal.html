@@ -5,6 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Voluntariado</title>
+<body>
+
+    <header class="container">
+        <h1>Bem-vindo ao Portal de Voluntariado</h1>
+        {% if user.is_authenticated %}
+            <a class="link" href="{% url 'index' %}">Sair</a>
+        {% endif %}
+    </header>
+
+    <section class="container">
+        <h2>Registrar</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form_registro.as_p }}
+            <button type="submit">Registrar</button>
+        </form>
+        <a class="link" href="{% url 'login' %}">Já tem uma conta? Faça login</a>
+    </section>
+
+    <section class="container">
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form_login.as_p }}
+            <button type="submit">Entrar</button>
+        </form>
+        <a class="link" href="{% url 'registro' %}">Criar uma conta</a>
+    </section>
+
+    <section class="box-causes">
+        <div class="box-causes-img">
+            <img class="projeto-img" src="{% static 'images/Ser_de_Luz.png' %}" alt="Projeto Ser de Luz">
+        </div>        
+        <h4><a href="#">Projeto de Ajuda Comunitária</a></h4>
+        <p>Seja um voluntário e ajude a transformar vidas!</p>
+        <a href="https://www.instagram.com/serdeluzpb/" target="_blank">
+            <button class="btn-primary">Saiba Mais</button>
+        </a>
+    </section>
+
+    <a href="{% url 'index' %}" class="btn-back">Voltar para Página Principal</a>
+
+
+ <!-- PORTAL - /* STYLE DA PAGINA */ -->   
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -134,42 +178,5 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Bem-vindo ao Portal de Voluntariado</h1>
-        <a class="link" href="{% url 'index' %}">Sair</a>
-    </div>
-
-    <div class="container">
-        <h2>Registrar</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Registrar</button>
-        </form>
-        <a class="link" href="{% url 'login' %}">Já tem uma conta? Faça login</a>
-    </div>
-
-    <div class="container">
-        <h2>Login</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Entrar</button>
-        </form>
-        <a class="link" href="{% url 'registro' %}">Criar uma conta</a>
-    </div>
-
-    <div class="box-causes">
-        <div class="box-causes-img">
-            <img class="projeto-img" src="{% static 'images/Ser_de_Luz.png' %}" alt="Projeto Ser de Luz">
-        </div>        
-        <h4><a href="#">Projeto de Ajuda Comunitária</a></h4>
-        <p>Seja um voluntário e ajude a transformar vidas!</p>
-        <a href="https://www.instagram.com/serdeluzpb/" target="_blank">
-            <button class="btn-primary">Saiba Mais</button>
-        </a>
-    </div>
-    <a href="{% url 'index' %}" class="btn-back">Voltar para Página Principal</a>
 </body>
 </html>
