@@ -120,9 +120,78 @@
                           </div>
                            <!-- Botão Doar -->
                             <div class="rd-navbar-nav-wrap active">
-                                <a href="{% url 'chave' %}">
-                                    <button type="button" class="btn-doar">Doar</button>
-                                </a>
+                                <button type="button" class="btn-doar" onclick="abrirModal()">Doar</button>
+                            </div>
+
+                            <!-- Modal -->
+                            <div id="modalDoacao" class="modal">
+                                <div class="modal-content">
+                                    <span class="fechar" onclick="fecharModal()">&times;</span>
+                                    <h2>Doe e Ajude Famílias</h2>
+                                    <p>Sua doação faz a diferença! Contribua via PIX e ajude famílias em situação de vulnerabilidade.</p>
+                                    <div class="pix-container">
+                                        <img src="{% static 'images/qr code.jpeg' %}" alt="QR Code PIX" class="qr-code">
+                                        <p class="pix-key">Chave PIX: <span id="pixKey">50064447000100</span></p>
+                                        <button class="btn-doar" onclick="copiarPix()">💜 Copiar Chave PIX</button>
+                                    </div>
+                                    <script>
+                                        function abrirModal() {
+                                            document.getElementById("modalDoacao").style.display = "flex";
+                                        }
+                                    
+                                        function fecharModal() {
+                                            document.getElementById("modalDoacao").style.display = "none";
+                                        }
+                                    
+                                        function copiarPix() {
+                                            var chavePix = document.getElementById("pixKey").innerText;
+                                            navigator.clipboard.writeText(chavePix).then(function () {
+                                                alert("Chave PIX copiada com sucesso!");
+                                            }).catch(function (error) {
+                                                console.error("Erro ao copiar chave PIX", error);
+                                            });
+                                        }
+                                        function abrirModal() {
+                                        document.getElementById("modalDoacao").style.display = "flex";
+                                    }
+
+                                        function fecharModal() {
+                                            document.getElementById("modalDoacao").style.display = "none";
+                                        }
+
+                                    </script>
+                                    <style>
+                                        .modal {
+                                            display: none; /* O modal começa oculto */
+                                            position: fixed;
+                                            z-index: 1000;
+                                            left: 0;
+                                            top: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background-color: rgba(0, 0, 0, 0.7);
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+                                        .modal-content {
+                                            background: #fff;
+                                            padding: 20px;
+                                            border-radius: 10px;
+                                            text-align: center;
+                                            width: 80%;
+                                            max-width: 400px;
+                                            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+                                        }
+                                    
+                                        .fechar {
+                                            position: absolute;
+                                            top: 10px;
+                                            right: 20px;
+                                            font-size: 30px;
+                                            cursor: pointer;
+                                        }
+                                    </style>
+                                </div>
                             </div>
                         </div>
                     </div>
