@@ -72,7 +72,8 @@
                                         <img src="{% static 'images/qr code.jpeg' %}" alt="QR Code PIX" class="qr-code">
                                         <p class="pix-key">Chave PIX: <span id="pixKey">50064447000100</span></p>
                                         <button class="btn-doar" onclick="copiarPix()">💜 Copiar Chave PIX</button>
-                                    </div>
+                                        <p id="mensagemCopiada" style="color: green; font-size: 14px; display: none; margin-top: 5px;">Chave PIX copiada!</p>
+                                    </div>                                  
                                     <script>
                                         function abrirModal() {
                                         document.getElementById("modalDoacao").style.display = "flex";
@@ -83,24 +84,27 @@
                                         }
 
                                         function copiarPix() {
-                                            var pixKey = document.getElementById("pixKey").innerText;
-                                            navigator.clipboard.writeText(pixKey).then(function() {
-                                                alert("Chave PIX copiada: " + pixKey);
-                                            }, function(err) {
-                                                console.error("Erro ao copiar: ", err);
-                                            });
+                                        var pixKey = document.getElementById("pixKey").innerText;
+                                        navigator.clipboard.writeText(pixKey).then(function() {
+                                            var mensagem = document.getElementById("mensagemCopiada");
+                                            mensagem.style.display = "block";
+                                            setTimeout(() => mensagem.style.display = "none", 3000);
+                                            
+                                            // Abrir modal de agradecimento
+                                            abrirModalAgradecimento();
+                                        });
+                                        }
+                                        function abrirModalAgradecimento() {
+                                        var modal = document.getElementById("modalAgradecimento");
+                                        modal.style.display = "flex";
+
+                                        // Fechar automaticamente após 3 segundos
+                                        setTimeout(() => fecharModalAgradecimento(), 3000);
                                         }
 
                                         function fecharModalAgradecimento() {
-                                            document.getElementById("modalAgradecimento").style.display = "none";
-                                        }
-                                        function abrirModalAgradecimento() {
-                                            document.getElementById("modalAgradecimento").style.display = "flex";
-                                            setTimeout(function () {
-                                                fecharModalAgradecimento();
-                                            }, 3000); // Fecha automaticamente após 3 segundos
-                                        }
-                                            
+                                        document.getElementById("modalAgradecimento").style.display = "none";
+                                        } 
                                     </script>
                                     
                                     <!-- Modal de Agradecimento -->
@@ -247,65 +251,87 @@
                           width: 100%;
                       }
                   }
-                  .modal {
-                    display: none;
-                    position: fixed;
-                    z-index: 1000;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.7);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    }
-                                            
-                    .modal-content {
-                    background: #fff;
-                    padding: 20px;
-                    border-radius: 10px;
-                    text-align: center;
-                    width: 80%;
-                    max-width: 400px;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                    }
-                                            
-                    .fechar {
-                    position: absolute;
-                    top: 10px;
-                    right: 20px;
-                    font-size: 30px;
-                    cursor: pointer;
-                    }
+                    /* Fundo escuro ao abrir o modal */
                     .modal {
-                    display: none; /* O modal começa oculto */
-                    position: fixed;
-                    z-index: 1000;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.7);
-                    align-items: center;
-                    justify-content: center;
+                        display: none;
+                        position: fixed;
+                        z-index: 1000;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        align-items: center;
+                        justify-content: center;
                     }
+
+                    /* Estilização do conteúdo do modal */
                     .modal-content {
                     background: #fff;
-                    padding: 20px;
-                    border-radius: 10px;
+                    padding: 30px;
+                    border-radius: 15px;
+                    width: 95%;
+                    max-width: 600px; /* Aumentado */
                     text-align: center;
-                    width: 80%;
-                    max-width: 400px;
-                    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
                     }
-                                            
+
+                    /* Animação de entrada */
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                            transform: scale(0.9);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+
+                    /* Botão de fechar */
                     .fechar {
-                    position: absolute;
-                    top: 10px;
-                    right: 20px;
-                    font-size: 30px;
-                    cursor: pointer;
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        font-size: 22px;
+                        cursor: pointer;
+                        color: #333;
+                        font-weight: bold;
+                        transition: 0.3s;
+                    }
+
+                    .fechar:hover {
+                        color: #d00;
+                    }
+
+                    /* Botão de doar */
+                    .btn-doar {
+                        background-color: #6a0dad;
+                        color: #fff;
+                        padding: 12px 25px;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        transition: 0.3s;
+                        font-weight: bold;
+                    }
+
+                    .btn-doar:hover {
+                        background-color: #520b99;
+                    }
+
+                    /* QR Code estilizado */
+                    .qr-code {
+                    width: 250px;  /* Aumentado */
+                    height: auto;  /* Mantém a proporção */
+                    margin-top: 15px;
+                    border-radius: 8px;
+                    }
+                    /* Modal de agradecimento maior */
+                    #modalAgradecimento .modal-content {
+                        max-width: 450px;
+                        padding: 25px;
                     }
             </style>
     </head>
