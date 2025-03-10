@@ -5,66 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capa - SER DE LUZ</title>
-    <style>
-    /* Estilo para o banner */
-.main-bunner {
-    background-image: url('/static/images/serddeluzcapa.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Move o texto para baixo */
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    color: white;
-    padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
-}
-        .main-bunner-title {
-            font-size: 80px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #772cd6, #ffd42b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            animation: fadeInUp 2s ease-out;
-        }
-        .main-bunner p {
-            max-width: 800px;
-            font-size: 20px;
-            line-height: 1.6;
-            animation: fadeInUp 2s ease-out;
-        }
-        /* Animação */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Botão Doar */
-        .btn-doar {
-            background-color: #772cd6;
-            color: white;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn-doar:hover {
-            background-color: #772cd6;
-        }
-    </style>
 </head>
 <body>
     <!-- Alerta para Internet Explorer -->
@@ -122,7 +62,6 @@
                             <div class="rd-navbar-nav-wrap active">
                                 <button type="button" class="btn-doar" onclick="abrirModal()">Doar</button>
                             </div>
-
                             <!-- Modal -->
                             <div id="modalDoacao" class="modal">
                                 <div class="modal-content">
@@ -136,61 +75,43 @@
                                     </div>
                                     <script>
                                         function abrirModal() {
-                                            document.getElementById("modalDoacao").style.display = "flex";
+                                        document.getElementById("modalDoacao").style.display = "flex";
                                         }
-                                    
+
                                         function fecharModal() {
                                             document.getElementById("modalDoacao").style.display = "none";
                                         }
-                                    
+
                                         function copiarPix() {
-                                            var chavePix = document.getElementById("pixKey").innerText;
-                                            navigator.clipboard.writeText(chavePix).then(function () {
-                                                alert("Chave PIX copiada com sucesso!");
-                                            }).catch(function (error) {
-                                                console.error("Erro ao copiar chave PIX", error);
+                                            var pixKey = document.getElementById("pixKey").innerText;
+                                            navigator.clipboard.writeText(pixKey).then(function() {
+                                                alert("Chave PIX copiada: " + pixKey);
+                                            }, function(err) {
+                                                console.error("Erro ao copiar: ", err);
                                             });
                                         }
-                                        function abrirModal() {
-                                        document.getElementById("modalDoacao").style.display = "flex";
-                                    }
 
-                                        function fecharModal() {
-                                            document.getElementById("modalDoacao").style.display = "none";
+                                        function fecharModalAgradecimento() {
+                                            document.getElementById("modalAgradecimento").style.display = "none";
                                         }
-
+                                        function abrirModalAgradecimento() {
+                                            document.getElementById("modalAgradecimento").style.display = "flex";
+                                            setTimeout(function () {
+                                                fecharModalAgradecimento();
+                                            }, 3000); // Fecha automaticamente após 3 segundos
+                                        }
+                                            
                                     </script>
-                                    <style>
-                                        .modal {
-                                            display: none; /* O modal começa oculto */
-                                            position: fixed;
-                                            z-index: 1000;
-                                            left: 0;
-                                            top: 0;
-                                            width: 100%;
-                                            height: 100%;
-                                            background-color: rgba(0, 0, 0, 0.7);
-                                            align-items: center;
-                                            justify-content: center;
-                                        }
-                                        .modal-content {
-                                            background: #fff;
-                                            padding: 20px;
-                                            border-radius: 10px;
-                                            text-align: center;
-                                            width: 80%;
-                                            max-width: 400px;
-                                            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-                                        }
                                     
-                                        .fechar {
-                                            position: absolute;
-                                            top: 10px;
-                                            right: 20px;
-                                            font-size: 30px;
-                                            cursor: pointer;
-                                        }
-                                    </style>
+                                    <!-- Modal de Agradecimento -->
+                                    <div id="modalAgradecimento" class="modal" style="display: none;">
+                                        <div class="modal-content">
+                                            <span class="fechar" onclick="fecharModalAgradecimento()">&times;</span>
+                                            <h2>💜 Muito Obrigado pela sua doação!</h2>
+                                            <p>Sua generosidade ajuda muitas famílias.</p>
+                                            <p>Que a luz e a gratidão retornem em dobro para você! ✨</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -198,69 +119,6 @@
                 </nav>
             </div>
         </header>
-        <style>
-          .rd-navbar-nav {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              display: flex;
-              gap: 20px;
-          }
-          .rd-nav-item {
-              padding: 10px 15px;
-              border-radius: 8px;
-              transition: all 0.3s ease-in-out;
-          }
-          /* Links da navegação */
-          .rd-nav-link {
-              text-decoration: none;
-              color: #333;
-              font-weight: bold;
-              font-size: 18px;
-              transition: color 0.3s ease-in-out;
-          }
-          /* Hover nos itens */
-          .rd-nav-item:hover {
-              background-color: rgba(255, 204, 0, 0.2);
-          }
-          /* 🔥 Destaque da página ativa */
-          .rd-nav-item.active {
-              background-color: #ffd42b;
-              color: white;
-              border-radius: 8px;
-          }
-          .rd-nav-item.active .rd-nav-link {
-              color: white;
-          }
-          /* Estilização do botão "Doar" */
-          .btn-doar {
-              background: linear-gradient(45deg, #ffd42b, #772cd6);
-              border: none;
-              color: white;
-              font-size: 18px;
-              font-weight: bold;
-              padding: 10px 20px;
-              border-radius: 8px;
-              transition: transform 0.3s ease-in-out, background 0.3s;
-              cursor: pointer;
-          }
-          .btn-doar:hover {
-              background: linear-gradient(45deg, #ffd42b, #772cd6);
-              transform: scale(1.05);
-          }
-      
-          /* Responsividade */
-          @media (max-width: 768px) {
-              .rd-navbar-nav {
-                  flex-direction: column;
-                  text-align: center;
-              }
-              
-              .btn-doar {
-                  width: 100%;
-              }
-          }
-      </style>
         <!-- Seção Principal -->
         <div class="main-bunner">
             <h1 class="main-bunner-title">SER DE LUZ</h1>
@@ -268,5 +126,188 @@
             </p>
         </div>
     </div>
+    <head>
+        <style>
+            /* Estilo para o banner */
+        .main-bunner {
+            background-image: url('/static/images/serddeluzcapa.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Move o texto para baixo */
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
+        }
+                .main-bunner-title {
+                    font-size: 80px;
+                    font-weight: bold;
+                    background: linear-gradient(45deg, #772cd6, #ffd42b);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    margin-bottom: 20px;
+                    animation: fadeInUp 2s ease-out;
+                }
+                .main-bunner p {
+                    max-width: 800px;
+                    font-size: 20px;
+                    line-height: 1.6;
+                    animation: fadeInUp 2s ease-out;
+                }
+                /* Animação */
+                @keyframes fadeInUp {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(50px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                /* Botão Doar */
+                .btn-doar {
+                    background-color: #772cd6;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 18px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: 0.3s;
+                }
+                .btn-doar:hover {
+                    background-color: #772cd6;
+                }
+                .rd-navbar-nav {
+                      list-style: none;
+                      padding: 0;
+                      margin: 0;
+                      display: flex;
+                      gap: 20px;
+                  }
+                  .rd-nav-item {
+                      padding: 10px 15px;
+                      border-radius: 8px;
+                      transition: all 0.3s ease-in-out;
+                  }
+                  /* Links da navegação */
+                  .rd-nav-link {
+                      text-decoration: none;
+                      color: #333;
+                      font-weight: bold;
+                      font-size: 18px;
+                      transition: color 0.3s ease-in-out;
+                  }
+                  /* Hover nos itens */
+                  .rd-nav-item:hover {
+                      background-color: rgba(255, 204, 0, 0.2);
+                  }
+                  /* 🔥 Destaque da página ativa */
+                  .rd-nav-item.active {
+                      background-color: #ffd42b;
+                      color: white;
+                      border-radius: 8px;
+                  }
+                  .rd-nav-item.active .rd-nav-link {
+                      color: white;
+                  }
+                  /* Estilização do botão "Doar" */
+                  .btn-doar {
+                      background: linear-gradient(45deg, #ffd42b, #772cd6);
+                      border: none;
+                      color: white;
+                      font-size: 18px;
+                      font-weight: bold;
+                      padding: 10px 20px;
+                      border-radius: 8px;
+                      transition: transform 0.3s ease-in-out, background 0.3s;
+                      cursor: pointer;
+                  }
+                  .btn-doar:hover {
+                      background: linear-gradient(45deg, #ffd42b, #772cd6);
+                      transform: scale(1.05);
+                  }
+              
+                  /* Responsividade */
+                  @media (max-width: 768px) {
+                      .rd-navbar-nav {
+                          flex-direction: column;
+                          text-align: center;
+                      }
+                      
+                      .btn-doar {
+                          width: 100%;
+                      }
+                  }
+                  .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    }
+                                            
+                    .modal-content {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    text-align: center;
+                    width: 80%;
+                    max-width: 400px;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                    }
+                                            
+                    .fechar {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    font-size: 30px;
+                    cursor: pointer;
+                    }
+                    .modal {
+                    display: none; /* O modal começa oculto */
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    align-items: center;
+                    justify-content: center;
+                    }
+                    .modal-content {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    text-align: center;
+                    width: 80%;
+                    max-width: 400px;
+                    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+                    }
+                                            
+                    .fechar {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    font-size: 30px;
+                    cursor: pointer;
+                    }
+            </style>
+    </head>
 </body>
 </html>
