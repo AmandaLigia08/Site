@@ -88,7 +88,7 @@
                                         navigator.clipboard.writeText(pixKey).then(function() {
                                             var mensagem = document.getElementById("mensagemCopiada");
                                             mensagem.style.display = "block";
-                                            setTimeout(() => mensagem.style.display = "none", 3000);
+                                            setTimeout(() => mensagem.style.display = "none", 5000);
                                             
                                             // Abrir modal de agradecimento
                                             abrirModalAgradecimento();
@@ -98,8 +98,8 @@
                                         var modal = document.getElementById("modalAgradecimento");
                                         modal.style.display = "flex";
 
-                                        // Fechar automaticamente após 3 segundos
-                                        setTimeout(() => fecharModalAgradecimento(), 3000);
+                                        // Fechar automaticamente após 5 segundos
+                                        setTimeout(() => fecharModalAgradecimento(), 5000);
                                         }
 
                                         function fecharModalAgradecimento() {
