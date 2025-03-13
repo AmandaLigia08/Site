@@ -1,5 +1,7 @@
 from django.urls import path 
 from myapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from .views import registrar_usuario
 
@@ -12,6 +14,7 @@ urlpatterns = [
     path('contato/', views.contato, name='contato'),
     path('chave/', views.chave, name='chave'),
     path('portal/', views.portal, name='portal'),
+    
 
     path("registro/", registrar_usuario, name="registro"),
     path("login/", auth_views.LoginView.as_view(template_name="usuarios/login.html"), name="login"),
@@ -19,35 +22,6 @@ urlpatterns = [
 
 ]
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Adicionar Isto
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Adicionar Isto
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 3504ff4 (carrosel)
-=======
->>>>>>> parent of 3504ff4 (carrosel)
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "usuarios",  # Adicionamos nosso app aqui
-]
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 3504ff4 (carrosel)
-=======
->>>>>>> parent of 3504ff4 (carrosel)
-
-=======
->>>>>>> parent of 345e26a (carrossel funcionando)
-=======
-
->>>>>>> parent of 3504ff4 (carrosel)

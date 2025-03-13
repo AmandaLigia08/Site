@@ -33,6 +33,10 @@ def chave(request):
     return render(request, 'chave.html')
 
 
-from django.shortcuts import render
-from .models import CarouselImage
+def HomeView(request):
+    carousel = Carousel.objects.all()
+    context  = {
+        'carousel' : carousel
+    }
+    return render(request, "index.html", context)
 

@@ -1,31 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<<<<<<< HEAD
-<<<<<<< HEAD
     <head>
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- CSS personalizado -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capa - SER DE LUZ</title>
-</head>
->>>>>>> parent of 7815b82 (up)
-=======
->>>>>>> parent of 345e26a (carrossel funcionando)
 <body>
-    <!-- Alerta para Internet Explorer -->
-    <div class="ie-panel">
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
-            <img src="{% static 'images/SERDELUZ_CANVA.png' %}" height="42" width="820"
-                 alt="Você está usando um navegador desatualizado. Atualize para uma experiência melhor.">
-        </a>
-    </div>
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-body">
@@ -135,77 +117,75 @@
                 </nav>
             </div>
         </header>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3504ff4 (carrosel)
-        <!-- Seção Principal -->
-        <div class="main-bunner">
-            <h1 class="main-bunner-title">SER DE LUZ</h1>
-            <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.
-            </p>
-<<<<<<< HEAD
-        </div>
-=======
     <!-- Seção Principal -->
-    <!-- slider section -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carrossel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            {% for object in carousel %}
+                <button type="button" data-bs-target="#carouselExampleCaptions" 
+                    data-bs-slide-to="{{ forloop.counter0 }}" 
+                    class="{% if forloop.first %}active{% endif %}" 
+                    aria-label="Slide {{ forloop.counter }}"></button>
+            {% endfor %}
         </div>
         <div class="carousel-inner">
-                {% for object in carousel%}
-                <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                    <img src="{{object.image.url}}" style="height:650px;" class="testi-overly d-block w-100" alt="sliderImg">
+            {% for object in carousel %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ object.image.url }}" class="d-block w-100" style="height:650px;" alt="sliderImg">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1 class="animate__animated
-                        {% if forloop.counter0 == 0 %}
-                        animate__fadeInDown
-                        {% endif %}
-                        {% if forloop.revcounter == 1 %}
-                        animate__bounce
-                        {% endif %}
-                        {% if forloop.revcounter == 2 %}
-                        animate__fadeInRight
-                        {% endif %}">{{object.title}}</h1>
-                        <a href="{% url 'index' %}" class="button animate__animated animate__zoomIn mt-3 py-3 px-5 btn font-weight-bold">
+                        <h1 class="animate__animated animate__fadeInDown">{{ object.title }}</h1>
+                        <a href="{% url 'index' %}" class="btn btn-primary animate__animated animate__zoomIn">
                             {{ object.action_name }}
-                        </a>                        
+                        </a>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>    
-    </div>
->>>>>>> parent of 345e26a (carrossel funcionando)
-=======
+            {% endfor %}
         </div>
->>>>>>> parent of 3504ff4 (carrosel)
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>    
+    </div>
     </div>
     <head>
         <style>
-            /* Estilo para o banner */
-        .main-bunner {
-            background-image: url('/static/images/serddeluzcapa.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Move o texto para baixo */
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: white;
-            padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
-        }
-                .main-bunner-title {
-                    font-size: 80px;
+                /* Garante que as imagens cobrem o espaço corretamente */
+                .carousel-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; /* Ajusta a imagem sem distorcer */
+                }
+
+                /* Animação suave para a transição dos slides */
+                .carousel-item {
+                    transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
+                }
+
+                /* Posicionamento do texto dentro do carrossel */
+                .carousel-caption {
+                    position: absolute;
+                    bottom: 5%; /* Move o texto para mais perto do rodapé */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    text-align: center;
+                    color: white;
+                    width: 90%;
+                    max-width: 900px;
+                    padding: 20px;
+                    border-radius: 10px;
+                }
+
+                /* Estilização do título */
+                .carousel-caption h1 {
+                    font-size: 60px;
                     font-weight: bold;
                     background: linear-gradient(45deg, #772cd6, #ffd42b);
                     -webkit-background-clip: text;
@@ -213,14 +193,49 @@
                     color: transparent;
                     text-transform: uppercase;
                     letter-spacing: 5px;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px; /* Reduz espaço entre o título e o botão */
                     animation: fadeInUp 2s ease-out;
                 }
-                .main-bunner p {
-                    max-width: 800px;
-                    font-size: 20px;
-                    line-height: 1.6;
-                    animation: fadeInUp 2s ease-out;
+
+                /* Botão estilizado */
+                .carousel-caption .button {
+                    background-color: #772cd6;
+                    color: white;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    padding: 12px 25px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    transition: background 0.3s ease-in-out, transform 0.3s;
+                }
+
+                /* Efeito hover no botão */
+                .carousel-caption .button:hover {
+                    background-color: #ffd42b;
+                    transform: scale(1.05);
+                }
+
+                /* Responsividade */
+                @media (max-width: 768px) {
+                    .carousel-inner {
+                        height: 80vh;
+                    }
+
+                    .carousel-caption {
+                        width: 95%;
+                        bottom: 3%; /* Ajusta para telas menores */
+                        padding: 15px;
+                    }
+
+                    .carousel-caption h1 {
+                        font-size: 40px;
+                        letter-spacing: 2px;
+                    }
+
+                    .carousel-caption .button {
+                        font-size: 16px;
+                        padding: 10px 20px;
+                    }
                 }
                 /* Animação */
                 @keyframes fadeInUp {
@@ -389,6 +404,13 @@
                     #modalAgradecimento .modal-content {
                         max-width: 450px;
                         padding: 25px;
+                    }
+                    /* Estilização do título do modal */
+                    .modal-content h2 {
+                        font-size: 22px; /* Reduzido para melhor ajuste */
+                        font-weight: bold;
+                        color: #6a0dad;
+                        margin-bottom: 10px;
                     }
         </style>
     </head>
