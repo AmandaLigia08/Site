@@ -20,10 +20,13 @@ urlpatterns = [
 ]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Adicionar Isto
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Adicionar Isto
 =======
+=======
+>>>>>>> parent of 3504ff4 (carrosel)
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -33,5 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "usuarios",  # Adicionamos nosso app aqui
 ]
+<<<<<<< HEAD
+>>>>>>> parent of 3504ff4 (carrosel)
+=======
 >>>>>>> parent of 3504ff4 (carrosel)
 
