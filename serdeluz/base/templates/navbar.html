@@ -117,6 +117,7 @@
                 </nav>
             </div>
         </header>
+<<<<<<< HEAD
     <!-- Seção Principal -->
     <!-- Carrossel -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -186,6 +187,34 @@
                 /* Estilização do título */
                 .carousel-caption h1 {
                     font-size: 60px;
+=======
+        <!-- Seção Principal -->
+        <div class="main-bunner">
+            <h1 class="main-bunner-title">SER DE LUZ</h1>
+            <p>Originado em Patos, interior da Paraíba, em junho de 2019, este projeto ilumina vidas através de ações solidárias de impacto social. Seu objetivo é alcançar e transformar a realidade de inúmeras pessoas em comunidades vulneráveis, tanto no município quanto na zona rural.
+            </p>
+        </div>
+    </div>
+    <head>
+        <style>
+            /* Estilo para o banner */
+        .main-bunner {
+            background-image: url('/static/images/serddeluzcapa.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Move o texto para baixo */
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            padding-bottom: 50px; /* Ajusta a distância do texto para o final do banner */
+        }
+                .main-bunner-title {
+                    font-size: 80px;
+>>>>>>> parent of 3504ff4 (carrosel)
                     font-weight: bold;
                     background: linear-gradient(45deg, #772cd6, #ffd42b);
                     -webkit-background-clip: text;
@@ -193,49 +222,14 @@
                     color: transparent;
                     text-transform: uppercase;
                     letter-spacing: 5px;
-                    margin-bottom: 10px; /* Reduz espaço entre o título e o botão */
+                    margin-bottom: 20px;
                     animation: fadeInUp 2s ease-out;
                 }
-
-                /* Botão estilizado */
-                .carousel-caption .button {
-                    background-color: #772cd6;
-                    color: white;
-                    border-radius: 5px;
-                    text-transform: uppercase;
-                    padding: 12px 25px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    transition: background 0.3s ease-in-out, transform 0.3s;
-                }
-
-                /* Efeito hover no botão */
-                .carousel-caption .button:hover {
-                    background-color: #ffd42b;
-                    transform: scale(1.05);
-                }
-
-                /* Responsividade */
-                @media (max-width: 768px) {
-                    .carousel-inner {
-                        height: 80vh;
-                    }
-
-                    .carousel-caption {
-                        width: 95%;
-                        bottom: 3%; /* Ajusta para telas menores */
-                        padding: 15px;
-                    }
-
-                    .carousel-caption h1 {
-                        font-size: 40px;
-                        letter-spacing: 2px;
-                    }
-
-                    .carousel-caption .button {
-                        font-size: 16px;
-                        padding: 10px 20px;
-                    }
+                .main-bunner p {
+                    max-width: 800px;
+                    font-size: 20px;
+                    line-height: 1.6;
+                    animation: fadeInUp 2s ease-out;
                 }
                 /* Animação */
                 @keyframes fadeInUp {
