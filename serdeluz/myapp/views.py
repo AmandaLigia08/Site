@@ -75,6 +75,7 @@ def registrar_usuario(request):
 <<<<<<< HEAD
 <<<<<<< HEAD
     return render(request, "registro.html", {"form": form})
+<<<<<<< HEAD
 
 =======
     return render(request, "registro.html", {"form": form})
@@ -82,3 +83,5 @@ def registrar_usuario(request):
 =======
     return render(request, "registro.html", {"form": form})
 >>>>>>> parent of 3504ff4 (carrosel)
+=======
+>>>>>>> parent of 345e26a (carrossel funcionando)

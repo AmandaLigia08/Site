@@ -24,6 +24,7 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Adicionar Isto
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Adicionar Isto
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 3504ff4 (carrosel)
@@ -41,3 +42,5 @@ INSTALLED_APPS = [
 =======
 >>>>>>> parent of 3504ff4 (carrosel)
 
+=======
+>>>>>>> parent of 345e26a (carrossel funcionando)
