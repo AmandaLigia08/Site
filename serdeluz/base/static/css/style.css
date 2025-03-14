@@ -6997,3 +6997,81 @@ html:not(.ie-11):not(.ios) .parallax-disabled {
 		height: auto;
 	}
 }
+#BASE
+.ie-panel {
+	display: none;
+	background: #ffd42b;
+	padding: 10px 0;
+	box-shadow: 3px 3px 5px 0 #772cd6(0, 0, 0, .3);
+	clear: both;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+  }
+
+  html.ie-10 .ie-panel,
+  html.lt-ie-10 .ie-panel {
+	display: block;
+  }
+
+#SOBRE
+.texto-destaque {
+	font-size: 48px;
+	font-weight: bold;
+	background: linear-gradient(45deg, #772cd6, #ffd42b);
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.team-classic {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out;
+	text-align: center;
+
+}
+.team-classic:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-img {
+	width: 100%;
+	max-width: 390px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 8px;
+	transition: transform 0.3s ease-in-out;
+}
+.team-classic:hover .team-img {
+	transform: scale(1.05);
+}
+
+.team-name {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 10px;
+}
+
+.team-role {
+	font-size: 18px;
+	color: #555;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+	.team-classic {
+		width: 90%;
+		margin: auto;
+	}
+	.team-img {
+		max-width: 100%;
+		height: auto;
+	}
+}

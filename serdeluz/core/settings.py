@@ -127,3 +127,10 @@ MESSAGE_TAGS = {
 	constants.DEBUG: 'alert-danger',
 	constants.SUCCESS: 'alert-success',
 	constants.INFO: 'alert-info',}
+STATIC_URL = '/static/'
+
+# Se precisar servir arquivos estáticos no modo desenvolvimento
+import os
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "base/static"),
+]
