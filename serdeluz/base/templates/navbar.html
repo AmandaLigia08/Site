@@ -132,12 +132,6 @@
             {% for object in carousel %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <img src="{{ object.image.url }}" class="d-block w-100" style="height:650px;" alt="sliderImg">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1 class="animate__animated animate__fadeInDown">{{ object.title }}</h1>
-                        <a href="{% url 'index' %}" class="btn btn-primary animate__animated animate__zoomIn">
-                            {{ object.action_name }}
-                        </a>
-                    </div>
                 </div>
             {% endfor %}
         </div>
@@ -412,6 +406,20 @@
                         color: #6a0dad;
                         margin-bottom: 10px;
                     }
+                    /* Remove margem inferior do carrossel */
+                    #carouselExampleCaptions {
+                        margin-bottom: 0;
+                    }
+
+                    /* Remove margem superior da seção "Sobre Nós" */
+                    .section-xl {
+                        margin-top: 0;
+                        padding-top: 0;
+                    }
+                    .section-xl {
+                        margin-top: -20px; /* Ajuste conforme necessário */
+                        padding-top: 0;
+                    }                    
         </style>
     </head>
 </body>
