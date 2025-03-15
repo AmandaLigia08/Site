@@ -40,6 +40,7 @@ class Carousel(models.Model):
     action_name = models.CharField(max_length=50)
     link        = models.TextField(null=True, blank=True)
     sub_title   = models.CharField(max_length=100)
-    
+    is_active   = models.BooleanField(default=True)  # Adicionando campo de ativação
+
     def __str__(self):
         return self.title

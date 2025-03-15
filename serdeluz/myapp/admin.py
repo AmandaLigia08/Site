@@ -3,10 +3,20 @@ from .models import Carousel, Conselho, Projeto
 
 @admin.register(Carousel)
 class CarouselAdmin(admin.ModelAdmin):
-    list_display = ['id', 'image', 'title', 'sub_title', 'action_name', 'link']
-    list_filter = ['title']
+    list_display = ['id', 'image', 'title', 'sub_title', 'action_name', 'link', 'is_active']
+    list_filter = ['title', 'is_active']
     search_fields = ['title', 'sub_title']
     ordering = ['id']
+
+    actions = ["ativar_carousel", "desativar_carousel"]
+
+    @admin.action(description="Ativar itens selecionados")
+    def ativar_carousel(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="Desativar itens selecionados")
+    def desativar_carousel(self, request, queryset):
+        queryset.update(is_active=False)
 
 @admin.register(Conselho)
 class ConselhoAdmin(admin.ModelAdmin):
